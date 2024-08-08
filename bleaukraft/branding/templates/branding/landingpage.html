@@ -1,4 +1,3 @@
-<!-- landing page-->
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -8,384 +7,350 @@
     <title>Branding Services</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'branding/css/style.css' %}">
+
     <style>
-        .hero-collage {
-            display: grid;
-            grid-template-columns: repeat(10, 1fr);
-            gap: 10px;
-            margin-bottom: 30px;
-        }
+        /* Landingpage style */
+    .hero-collage {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 10px;
+        margin-bottom: 30px;
+    }
 
-        .hero-image {
-            position: relative;
-            width: 100%;
-            padding-top: 100%;
-            overflow: hidden;
-        }
+    .hero-image {
+        position: relative;
+        width: 100%;
+        padding-top: 100%;
+        overflow: hidden;
+    }
 
-        .hero-image img,
-        .hero-image span {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease-in-out;
-        }
+    .hero-image img,
+    .hero-image span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease-in-out;
+    }
 
-        .hero-image span {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.7);
-            opacity: 0;
-            transform: translateY(-100%);
-        }
+    .hero-image span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.7);
+        opacity: 0;
+        transform: translateY(-100%);
+    }
 
-        .hero-image.bg-primary span {
-            background-color: #007bff !important;
-        }
+    .hero-image.bg-primary span {
+        background-color: #007bff !important;
+    }
 
-        .hero-image.folded img {
-            transform: translateY(100%);
-        }
+    .hero-image.folded img {
+        transform: translateY(100%);
+    }
 
-        .hero-image.folded span {
-            transform: translateY(0);
-            opacity: 1;
-        }
+    .hero-image.folded span {
+        transform: translateY(0);
+        opacity: 1;
+    }
 
-        .hero-section h1 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-top: 20px;
-        }
+    .hero-section h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-top: 20px;
+    }
 
-        .hero-section h3 {
-            text-align: center;
-            font-size: 1.5rem;
-            margin-top: 10px;
-        }
+    .hero-section h3 {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-top: 10px;
+    }
 
-        .hero-section h4 {
-            text-align: center;
-            font-size: 1.2rem;
-            margin-top: 5px;
-        }
+    .hero-section h4 {
+        text-align: center;
+        font-size: 1.2rem;
+        margin-top: 5px;
+    }
 
-        .about-section,
-        .services-section {
-            padding: 50px 0;
-        }
+    .about-section,
+    .services-section {
+        padding: 50px 0;
+    }
 
-        .about-section h2,
-        .services-section h2 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+    .about-section h2,
+    .services-section h2 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
 
-        .service-box {
-            padding: 30px;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s ease-in-out;
-        }
+    .service-box {
+        padding: 30px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease-in-out;
+    }
 
-        .service-box:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        }
+    .service-box:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
 
-        .contact-info {
-            background-color: #f5f5f5;
-            padding: 20px 0;
-        }
+    .contact-info {
+        background-color: #f5f5f5;
+        padding: 20px 0;
+        color: #fff;
+    }
 
+    .contact-info .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .contact-details,
+    .social-links {
+        display: flex;
+        align-items: center;
+    }
+
+    .contact-details span,
+    .social-links a {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        color: #fff;
+    }
+
+    .contact-details .icon,
+    .social-links .icon {
+        margin-right: 5px;
+        font-size: 1.2rem;
+    }
+
+    .contact-info .container .contact-details .icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    @media (max-width: 768px) {
         .contact-info .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+            flex-direction: column;
+            text-align: center;
         }
 
         .contact-details,
         .social-links {
-            display: flex;
-            align-items: center;
+            margin-bottom: 10px;
+            justify-content: center;
         }
+    }
 
-        .contact-details span,
-        .social-links a {
-            display: flex;
-            align-items: center;
-            margin-right: 20px;
-        }
+    .navbar-logo {
+        background-color: white;
+        padding: 5px;
+        border-radius: 5px;
+    }
 
-        .contact-details .icon,
-        .social-links .icon {
-            margin-right: 5px;
-            font-size: 1.2rem;
-        }
+    .navbar-logo .navbar-brand img {
+        display: block;
+    }
 
-        .contact-info .container .contact-details .icon {
-            width: 16px;
-            height: 16px;
-        }
+    .navbar-nav .nav-link {
+        color: black !important;
+        padding: 0.5rem 1rem;
+        margin: 0 0.2rem;
+        transition: color 0.3s, background-color 0.3s;
+    }
 
-        @media (max-width: 768px) {
-            .contact-info .container {
-                flex-direction: column;
-                text-align: center;
-            }
+    .navbar-nav .nav-link:hover {
+        color: #ffffff;
+        background-color: #007bff; /* Bootstrap primary color */
+        text-decoration: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
 
-            .contact-details,
-            .social-links {
-                margin-bottom: 10px;
-                justify-content: center;
-            }
-        }
-            .contact-info .container .contact-details .icon {
-                width: 16px;
-                height: 16px;
-            }
+    .navbar-nav .nav-link.disabled {
+        color: #6c757d;
+    }
 
-    </style>
+    .contact-info .contact-link {
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .contact-info .contact-link:hover {
+        color: #e0e0e0; /* Light gray for hover effect */
+    }
+
+    .contact-info .icon {
+        width: 1.2rem;
+        height: 1.2rem;
+        vertical-align: middle;
+        margin-right: 0.5rem;
+    }
+
+</style>
 </head>
 <body>
+<!-- Contacts Navbar -->
+<header class="contact-info bg-primary">
+    <div class="container">
+        <div class="contact-details text-white">
+            <span><img src="{% static 'svg/phone_call.svg' %}" class="icon"> <a href="tel:+254724239883" class="text-white contact-link">+254724239883</a> / <a href="tel:+254728646757" class="text-white contact-link">+254728646757</a></span>
+            <span><img src="{% static 'svg/email.svg' %}" class="icon"> <a href="mailto:sales@bleaukraftlimited.com" class="text-white contact-link">sales@bleaukraftlimited.com</a></span>
+            <span><img src="{% static 'svg/location_pin.svg' %}" class="icon"> City Square, Nairobi</span>
+            <span><img src="{% static 'svg/post_office.svg' %}" class="icon"> P.O Box 57507-00200</span>
+        </div>
+    </div>
+</header>
 
-    <header class="contact-info bg-primary">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <a class="navbar-brand" href="{% url 'branding:home' %}">
+        <img src="{% static 'logo/logo.jpeg' %}" alt="Logo" class="d-inline-block align-top img-fluid" style="max-width: 100px; height: auto;">
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item active">
+                <a class="nav-link btn btn-outline-primary shadow-sm rounded" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn btn-outline-primary shadow-sm rounded" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn btn-outline-primary shadow-sm rounded" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn btn-outline-primary shadow-sm rounded disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+    <br>
+    <!-- Hero Section -->
+    <header class="hero-section">
         <div class="container">
-            <div class="contact-details">
-                <span><img src="{% static 'svg/phone_call.svg' %}" class="icon"> +254724239883/ +254728646757</span>
-                <span><img src="{% static 'svg/email.svg' %}" class="icon"> sales@bleaukraftlimited.com</span>
-                <span><img src="{% static 'svg/location_pin.svg' %}" class="icon"> City Square, Nairobi</span>
-                <span><img src="{% static 'svg/post_office.svg' %}" class="icon"> P.O Box 57507-00200</span>
+            <div class="hero-collage">
+                <div class="hero-image bg-primary" data-letter="B">
+                    <img src="{% static 'images/name1.jpg' %}" alt="Image 1">
+                    <span>B</span>
+                </div>
+                <div class="hero-image bg-primary" data-letter="L">
+                    <img src="{% static 'images/name2.jpg' %}" alt="Image 2">
+                    <span>L</span>
+                </div>
+                <div class="hero-image bg-primary" data-letter="E">
+                    <img src="{% static 'images/name3.jpg' %}" alt="Image 3">
+                    <span>E</span>
+                </div>
+                <div class="hero-image bg-primary" data-letter="A">
+                    <img src="{% static 'images/name4.jpg' %}" alt="Image 4">
+                    <span>A</span>
+                </div>
+                <div class="hero-image bg-primary" data-letter="U">
+                    <img src="{% static 'images/name1.jpg' %}" alt="Image 5">
+                    <span>U</span>
+                </div>
+                <div class="hero-image bg-primary" data-letter="K">
+                    <img src="{% static 'images/name2.jpg' %}" alt="Image 6">
+                    <span>K</span>
+                </div>
+                <div class="hero-image bg-primary" data-letter="R">
+                    <img src="{% static 'images/name3.jpg' %}" alt="Image 7">
+                    <span>R</span>
+                </div>
+                <div class="hero-image bg-primary" data-letter="A">
+                    <img src="{% static 'images/name4.jpg' %}" alt="Image 8">
+                    <span>A</span>
+                </div>
+                <div class="hero-image bg-primary" data-letter="F">
+                    <img src="{% static 'images/name2.jpg' %}" alt="Image 9">
+                    <span>F</span>
+                </div>
+                <div class="hero-image bg-primary" data-letter="T">
+                    <img src="{% static 'images/name4.jpg' %}" alt="Image 10">
+                    <span>T</span>
+                </div>
             </div>
+            <h3>We are a creative printing and branding business firm in Nairobi</h3>
+            <h4>Our services include printing and branding</h4>
         </div>
     </header>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <!-- About Section -->
+    <section class="about-section bg-light">
         <div class="container">
-            <a class="navbar-brand" href="{% url 'branding:home' %}">
-                <img src="{% static 'logo/logo1.jpg' %}" alt="Logo" width="70" height="70" class="d-inline-block align-top">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'branding:home' %}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'branding:services' %}">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'branding:contact' %}">Contact</a>
-                    </li>
-                </ul>
+            <h2>About Us</h2>
+            <p>BleauKraft is a leading creative printing and branding business firm in Nairobi, Kenya. We specialize in delivering high-quality printing and branding solutions to help businesses establish a strong and recognizable brand presence.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <h4>Printing Services</h4>
+                        <p>We offer a wide range of printing services including business cards, brochures, banners, and more. Our state-of-the-art printing technology ensures top-notch quality and vibrant colors.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <h4>Branding Solutions</h4>
+                        <p>Our branding solutions help businesses create a unique and memorable brand identity. From logo design to branded merchandise, we provide comprehensive branding services tailored to your needs.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <h4>Promotional Products</h4>
+                        <p>We offer a variety of promotional products to help businesses promote their brand effectively. From custom apparel to promotional giveaways, we have everything you need to make a lasting impression.</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
-    <br>
-    <!-- Hero Section -->
-<header class="hero-section">
-    <div class="container">
-        <div class="hero-collage">
-            <div class="hero-image bg-primary" data-letter="B">
-                <img src="{% static 'images/name1.jpg' %}" alt="Image 1">
-                <span>B</span>
-            </div>
-            <div class="hero-image bg-primary" data-letter="L">
-                <img src="{% static 'images/name2.jpg' %}" alt="Image 2">
-                <span>L</span>
-            </div>
-            <div class="hero-image bg-primary" data-letter="E">
-                <img src="{% static 'images/name3.jpg' %}" alt="Image 3">
-                <span>E</span>
-            </div>
-            <div class="hero-image bg-primary" data-letter="A">
-                <img src="{% static 'images/name4.jpg' %}" alt="Image 4">
-                <span>A</span>
-            </div>
-            <div class="hero-image bg-primary" data-letter="U">
-                <img src="{% static 'images/name1.jpg' %}" alt="Image 5">
-                <span>U</span>
-            </div>
-            <div class="hero-image bg-primary" data-letter="K">
-                <img src="{% static 'images/name2.jpg' %}" alt="Image 6">
-                <span>K</span>
-            </div>
-            <div class="hero-image bg-primary" data-letter="R">
-                <img src="{% static 'images/name3.jpg' %}" alt="Image 7">
-                <span>R</span>
-            </div>
-            <div class="hero-image bg-primary" data-letter="A">
-                <img src="{% static 'images/name4.jpg' %}" alt="Image 8">
-                <span>A</span>
-            </div>
-            <div class="hero-image bg-primary" data-letter="F">
-                <img src="{% static 'images/name2.jpg' %}" alt="Image 9">
-                <span>F</span>
-            </div>
-            <div class="hero-image bg-primary" data-letter="T">
-                <img src="{% static 'images/name4.jpg' %}" alt="Image 10">
-                <span>T</span>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2023 BleauKraft Limited. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <ul class="list-unstyled mb-0">
+                        <li class="d-inline-block"><a href="{% url 'branding:home' %}" class="text-white">Privacy Policy</a></li>
+                        <li class="d-inline-block ml-3"><a href="{% url 'branding:home' %}" class="text-white">Terms & Conditions</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <h3>We are a creative printing and branding business</h3><br>
-        <h4>Print | Brand | Advertise</h4>
-        <a href="#contact" class="cta-button">Get in Touch</a>
-    </div>
-</header>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $('.hero-image').hover(function () {
-                $(this).toggleClass('folded');
+        document.querySelectorAll('.hero-image').forEach(function(image) {
+            image.addEventListener('mouseenter', function() {
+                image.classList.add('folded');
+            });
+            image.addEventListener('mouseleave', function() {
+                image.classList.remove('folded');
             });
         });
     </script>
 </body>
-</html>
-
-
-    <div class="container mt-5">
-        <!-- Branding Services Section -->
-        <section id="branding-services">
-            <h2 class="text-center mb-4">Our Branding Services</h2>
-            <div class="row">
-                <!-- Example Service -->
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <img src="{% static 'branding/images/picture1.jpg' %}" class="card-img-top" alt="Brand Strategy Development">
-                        <div class="card-body">
-                            <h5 class="card-title">Brand Strategy Development</h5>
-                            <p class="card-text">We help you define your brand strategy through market research, brand positioning, and messaging.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Add more services similarly -->
-                <!-- Another Service -->
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <img src="{% static 'branding/images/picture2.jpg' %}" class="card-img-top" alt="Brand Identity Design">
-                        <div class="card-body">
-                            <h5 class="card-title">Brand Identity Design</h5>
-                            <p class="card-text">Our team designs unique logos, color palettes, and brand guidelines to create a strong identity.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Another Service -->
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <img src="{% static 'branding/images/picture3.jpg' %}" class="card-img-top" alt="Graphic Design">
-                        <div class="card-body">
-                            <h5 class="card-title">Graphic Design</h5>
-                            <p class="card-text">We provide creative graphic design services including business cards, brochures, and more.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Repeat for more services -->
-        </section>
-
-        <!-- Items to be Branded Section -->
-        <section id="items-to-be-branded" class="mt-5">
-            <h2 class="text-center mb-4">Items to be Branded</h2>
-            <div class="row">
-                <!-- Example Item -->
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <img src="{% static 'branding/images/picture4.jpg' %}" class="card-img-top" alt="Office Supplies">
-                        <div class="card-body">
-                            <h5 class="card-title">Office Supplies</h5>
-                            <p class="card-text">Branding on business cards, letterheads, notepads, and pens.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Add more items similarly -->
-                <!-- Another Item -->
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <img src="{% static 'branding/images/picture5.jpg' %}" class="card-img-top" alt="Promotional Items">
-                        <div class="card-body">
-                            <h5 class="card-title">Promotional Items</h5>
-                            <p class="card-text">T-shirts, mugs, tote bags, and other promotional merchandise.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Another Item -->
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <img src="{% static 'branding/images/picture6.jpg' %}" class="card-img-top" alt="Tech Gadgets">
-                        <div class="card-body">
-                            <h5 class="card-title">Tech Gadgets</h5>
-                            <p class="card-text">USB drives, phone cases, and other tech gadgets.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Repeat for more items -->
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="mt-5">
-            <h2 class="text-center mb-4">Contact Us</h2>
-            <form>
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Your Name">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea class="form-control" id="message" rows="3" placeholder="Your Message"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </section>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const heroImages = document.querySelectorAll(".hero-image");
-            let index = 0;
-            const delay = 900; // Delay between reveals
-            const loopInterval = 9000; // Loop interval in milliseconds (10 seconds)
-
-            function revealNextImage() {
-                if (index < heroImages.length) {
-                    heroImages[index].classList.add("folded");
-                    index++;
-                    setTimeout(revealNextImage, delay); // Adjust the delay as needed
-                } else {
-                    // Reset index and start over after the loop interval
-                    index = 0;
-                    setTimeout(() => {
-                        heroImages.forEach(img => img.classList.remove("folded")); // Reset the folded state
-                        revealNextImage(); // Start the reveal process again
-                    }, loopInterval);
-                }
-            }
-
-            revealNextImage(); // Start the image reveal process
-        });
-    </script>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-
 </html>
