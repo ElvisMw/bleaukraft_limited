@@ -4,239 +4,337 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Branding Services</title>
+    <title>Bleaukraft Limited - Creative Branding Solutions</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'branding/css/style.css' %}">
 
     <style>
-        /* Landingpage style */
-    .hero-collage {
-        display: grid;
-        grid-template-columns: repeat(10, 1fr);
-        gap: 10px;
-        margin-bottom: 30px;
-    }
+        /* Landing page custom styles */
+        .hero-collage {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 10px;
+            margin-bottom: 30px;
+        }
 
-    .hero-image {
-        position: relative;
-        width: 100%;
-        padding-top: 100%;
-        overflow: hidden;
-    }
+        .hero-image {
+            position: relative;
+            width: 100%;
+            padding-top: 100%;
+            overflow: hidden;
+        }
 
-    .hero-image img,
-    .hero-image span {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease-in-out;
-    }
+        .hero-image img,
+        .hero-image span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease-in-out;
+        }
 
-    .hero-image span {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        color: white;
-        background-color: rgba(0, 0, 0, 0.7);
-        opacity: 0;
-        transform: translateY(-100%);
-    }
+        .hero-image span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transform: translateY(-100%);
+        }
 
-    .hero-image.bg-primary span {
-        background-color: #007bff !important;
-    }
+        .hero-image.bg-primary span {
+            background-color: #007bff !important;
+        }
 
-    .hero-image.folded img {
-        transform: translateY(100%);
-    }
+        .hero-image.folded img {
+            transform: translateY(100%);
+        }
 
-    .hero-image.folded span {
-        transform: translateY(0);
-        opacity: 1;
-    }
+        .hero-image.folded span {
+            transform: translateY(0);
+            opacity: 1;
+        }
 
-    .hero-section h1 {
-        text-align: center;
-        font-size: 2.5rem;
-        margin-top: 20px;
-    }
-
-    .hero-section h3 {
-        text-align: center;
-        font-size: 1.5rem;
-        margin-top: 10px;
-    }
-
-    .hero-section h4 {
-        text-align: center;
-        font-size: 1.2rem;
-        margin-top: 5px;
-    }
-
-    .about-section,
-    .services-section {
-        padding: 50px 0;
-    }
-
-    .about-section h2,
-    .services-section h2 {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    .service-box {
-        padding: 30px;
-        background-color: #f8f9fa;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        transition: box-shadow 0.3s ease-in-out;
-    }
-
-    .service-box:hover {
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    }
-
-    .contact-info {
-        background-color: #f5f5f5;
-        padding: 20px 0;
-        color: #fff;
-    }
-
-    .contact-info .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-
-    .contact-details,
-    .social-links {
-        display: flex;
-        align-items: center;
-    }
-
-    .contact-details span,
-    .social-links a {
-        display: flex;
-        align-items: center;
-        margin-right: 20px;
-        color: #fff;
-    }
-
-    .contact-details .icon,
-    .social-links .icon {
-        margin-right: 5px;
-        font-size: 1.2rem;
-    }
-
-    .contact-info .container .contact-details .icon {
-        width: 16px;
-        height: 16px;
-    }
-
-    @media (max-width: 768px) {
-        .contact-info .container {
-            flex-direction: column;
+        .hero-section h1,
+        .hero-section h3,
+        .hero-section h4 {
             text-align: center;
+            margin-top: 20px;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero-section h3 {
+            font-size: 1.5rem;
+        }
+
+        .hero-section h4 {
+            font-size: 1.2rem;
+        }
+
+        .about-section,
+        .services-section {
+            padding: 50px 0;
+        }
+
+        .about-section h2,
+        .services-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .service-box {
+            padding: 30px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .service-box:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-info {
+            background-color: #343a40;
+            padding: 20px 0;
+            color: #fff;
+        }
+
+        .contact-info .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
         .contact-details,
         .social-links {
-            margin-bottom: 10px;
-            justify-content: center;
+            display: flex;
+            align-items: center;
         }
-    }
 
-    .navbar-logo {
-        background-color: white;
-        padding: 5px;
-        border-radius: 5px;
-    }
+        .contact-details span,
+        .social-links a {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            color: #fff;
+        }
 
-    .navbar-logo .navbar-brand img {
-        display: block;
-    }
+        .contact-details .icon,
+        .social-links .icon {
+            margin-right: 5px;
+            font-size: 1.2rem;
+        }
 
-    .navbar-nav .nav-link {
-        color: black !important;
-        padding: 0.5rem 1rem;
-        margin: 0 0.2rem;
-        transition: color 0.3s, background-color 0.3s;
-    }
+        .contact-info .container .contact-details .icon {
+            width: 16px;
+            height: 16px;
+        }
 
-    .navbar-nav .nav-link:hover {
-        color: #ffffff;
-        background-color: #007bff; /* Bootstrap primary color */
-        text-decoration: none;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
+        @media (max-width: 768px) {
+            .contact-info .container {
+                flex-direction: column;
+                text-align: center;
+            }
 
-    .navbar-nav .nav-link.disabled {
-        color: #6c757d;
-    }
+            .contact-details,
+            .social-links {
+                margin-bottom: 10px;
+                justify-content: center;
+            }
+        }
 
-    .contact-info .contact-link {
-        text-decoration: none;
-        transition: color 0.3s;
-    }
+        .navbar-logo {
+            background-color: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
 
-    .contact-info .contact-link:hover {
-        color: #e0e0e0; /* Light gray for hover effect */
-    }
+        .navbar-logo .navbar-brand img {
+            display: block;
+        }
 
-    .company-name {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #007bff;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    }
-    </style>
+        .navbar-nav .nav-link {
+            color: black !important;
+            padding: 0.5rem 1rem;
+            margin: 0 0.2rem;
+            transition: color 0.3s, background-color 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffffff;
+            background-color: #007bff; /* Bootstrap primary color */
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-nav .nav-link.disabled {
+            color: #6c757d;
+        }
+
+        .contact-info .contact-link {
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-info .contact-link:hover {
+            color: #e0e0e0; /* Light gray for hover effect */
+        }
+
+        .company-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #007bff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Sticky Contact Button Styles */
+        .sticky-contact-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .sticky-contact-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        .sticky-contact-button a {
+            color: white;
+            text-decoration: none;
+        }
+        .sticky-contact-button img {
+            width: 24px; /* Adjust icon size */
+            height: 24px; /* Adjust icon size */
+        }
+        .sticky-contact-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s, transform 0.3s;
+            z-index: 1000; /* Ensure buttons are on top of other content */
+        }
+
+        .sticky-contact-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        .sticky-contact-button img {
+            width: 24px; /* Adjust icon size */
+            height: 24px; /* Adjust icon size */
+        }
+
+        .email-button {
+            bottom: 80px; /* Adjust position for stacking */
+            background-color: #007bff; /* Bootstrap primary color */
+        }
+
+        .whatsapp-button {
+            bottom: 140px; /* Adjust position for stacking */
+            background-color: #25D366; /* WhatsApp color */
+        }
+
+        .email-button:hover {
+            background-color: #0056b3; /* Darker color for email button */
+        }
+
+        .whatsapp-button:hover {
+            background-color: #128C7E; /* Darker color for WhatsApp button */
+        }
+
+</style>
 </head>
 <body>
-<!-- Contacts Navbar -->
+    <!-- Contacts Navbar -->
 <header class="contact-info bg-primary">
     <div class="container">
-        <div class="contact-details text-white">
-            <span><img src="{% static 'svg/phone_call.svg' %}" class="icon"> <a href="tel:+254724239883" class="text-white contact-link">+254724239883</a> / <a href="tel:+254728646757" class="text-white contact-link">+254728646757</a></span>
-            <span><img src="{% static 'svg/email.svg' %}" class="icon"> <a href="mailto:sales@bleaukraftlimited.com" class="text-white contact-link">sales@bleaukraftlimited.com</a></span>
-            <span><img src="{% static 'svg/location_pin.svg' %}" class="icon"> City Square, Nairobi</span>
-            <span><img src="{% static 'svg/post_office.svg' %}" class="icon"> P.O Box 57507-00200</span>
+        <div class="row contact-details text-white">
+            <div class="col-12 col-md-6 col-lg-3 mb-2 mb-lg-0">
+                <span><img src="{% static 'svg/phone_call.svg' %}" class="icon">
+                <a href="tel:+254724239883" class="text-white contact-link">+254724239883</a> /
+                <a href="tel:+254728646757" class="text-white contact-link">+254728646757</a>
+                </span>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2 mb-lg-0">
+                <span><img src="{% static 'svg/email.svg' %}" class="icon">
+                <a href="mailto:sales@bleaukraftlimited.com" class="text-white contact-link">sales@bleaukraftlimited.com</a>
+                </span>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2 mb-lg-0">
+                <span><img src="{% static 'svg/location_pin.svg' %}" class="icon">
+                City Square, Nairobi
+                </span>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <span><img src="{% static 'svg/post_office.svg' %}" class="icon">
+                P.O Box 57507-00200
+                </span>
+            </div>
         </div>
     </div>
 </header>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-    <a class="navbar-brand d-flex align-items-center" href="{% url 'branding:home' %}">
-        <img src="{% static 'logo/logo.jpeg' %}" alt="Logo" class="d-inline-block align-top img-fluid" style="max-width: 100px; height: auto;">
-        <span class="ml-2 company-name">Bleaukraft Limited</span>
-    </a>
-    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mx-auto">
-            <li class="nav-item active">
-                <a class="nav-link btn btn-outline-primary shadow-sm rounded" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link btn btn-outline-primary shadow-sm rounded" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link btn btn-outline-primary shadow-sm rounded" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link btn btn-outline-primary shadow-sm rounded disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <a class="navbar-brand d-flex align-items-center" href="{% url 'branding:home' %}">
+            <img src="{% static 'logo/logo_copy.jpg' %}" alt="Logo" class="d-inline-block align-top img-fluid" style="max-width: 100px; height: auto;">
+            <span class="ml-2 company-name">Bleaukraft Limited</span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item active">
+                    <a class="nav-link btn btn-outline-primary shadow-sm rounded" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-primary shadow-sm rounded" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-primary shadow-sm rounded" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-primary shadow-sm rounded disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     <br>
+
     <!-- Hero Section -->
     <header class="hero-section">
         <div class="container">
@@ -258,99 +356,113 @@
                     <span>A</span>
                 </div>
                 <div class="hero-image bg-primary" data-letter="U">
-                    <img src="{% static 'images/name1.jpg' %}" alt="Image 5">
+                    <img src="{% static 'images/name5.jpg' %}" alt="Image 5">
                     <span>U</span>
                 </div>
                 <div class="hero-image bg-primary" data-letter="K">
-                    <img src="{% static 'images/name2.jpg' %}" alt="Image 6">
+                    <img src="{% static 'images/name6.jpg' %}" alt="Image 6">
                     <span>K</span>
                 </div>
                 <div class="hero-image bg-primary" data-letter="R">
-                    <img src="{% static 'images/name3.jpg' %}" alt="Image 7">
+                    <img src="{% static 'images/name7.jpg' %}" alt="Image 7">
                     <span>R</span>
                 </div>
                 <div class="hero-image bg-primary" data-letter="A">
-                    <img src="{% static 'images/name4.jpg' %}" alt="Image 8">
+                    <img src="{% static 'images/name8.jpg' %}" alt="Image 8">
                     <span>A</span>
                 </div>
                 <div class="hero-image bg-primary" data-letter="F">
-                    <img src="{% static 'images/name2.jpg' %}" alt="Image 9">
+                    <img src="{% static 'images/name9.jpg' %}" alt="Image 9">
                     <span>F</span>
                 </div>
                 <div class="hero-image bg-primary" data-letter="T">
-                    <img src="{% static 'images/name4.jpg' %}" alt="Image 10">
+                    <img src="{% static 'images/name10.jpg' %}" alt="Image 10">
                     <span>T</span>
                 </div>
             </div>
-            <h3>We are a creative printing and branding business firm in Nairobi</h3>
-            <h4>Our services include printing and branding</h4>
+            <h1 class="hero-title">Welcome to Bleaukraft Limited</h1>
+            <h3 class="hero-subtitle">Your Partner in Creative Branding Solutions</h3>
+            <h4 class="hero-tagline">From Concept to Completion, We've Got You Covered</h4>
         </div>
     </header>
 
     <!-- About Section -->
-    <section class="about-section bg-light">
+    <section class="about-section py-5">
         <div class="container">
             <h2>About Us</h2>
-            <p>BleauKraft is a leading creative printing and branding business firm in Nairobi, Kenya. We specialize in delivering high-quality printing and branding solutions to help businesses establish a strong and recognizable brand presence.</p>
+            <p>
+                At Bleaukraft Limited, we specialize in providing comprehensive branding solutions tailored to meet the unique needs of our clients.
+                Our experienced team is dedicated to delivering creative and innovative strategies that enhance your brand's identity and visibility.
+            </p>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="services-section">
+    <section class="services-section py-5 bg-light">
         <div class="container">
             <h2>Our Services</h2>
             <div class="row">
                 <div class="col-md-4">
                     <div class="service-box">
-                        <h4>Printing Services</h4>
-                        <p>We offer a wide range of printing services including business cards, brochures, banners, and more. Our state-of-the-art printing technology ensures top-notch quality and vibrant colors.</p>
+                        <h3>Brand Strategy</h3>
+                        <p>We develop customized brand strategies that align with your business goals and resonate with your target audience.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="service-box">
-                        <h4>Branding Solutions</h4>
-                        <p>Our branding solutions help businesses create a unique and memorable brand identity. From logo design to branded merchandise, we provide comprehensive branding services tailored to your needs.</p>
+                        <h3>Creative Design</h3>
+                        <p>Our creative design services include logo design, packaging design, and marketing materials that stand out.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="service-box">
-                        <h4>Promotional Products</h4>
-                        <p>We offer a variety of promotional products to help businesses promote their brand effectively. From custom apparel to promotional giveaways, we have everything you need to make a lasting impression.</p>
+                        <h3>Digital Marketing</h3>
+                        <p>We offer digital marketing solutions that increase your online presence and drive engagement with your brand.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer bg-dark text-white">
-        <div class="container">
+    <!-- Footer Section -->
+    <footer class="text-center text-lg-start bg-dark text-white py-4">
+        <div class="container p-4">
             <div class="row">
-                <div class="col-md-6">
-                    <p>&copy; 2023 BleauKraft Limited. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-right">
-                    <ul class="list-unstyled mb-0">
-                        <li class="d-inline-block"><a href="{% url 'branding:home' %}" class="text-white">Privacy Policy</a></li>
-                        <li class="d-inline-block ml-3"><a href="{% url 'branding:home' %}" class="text-white">Terms & Conditions</a></li>
-                    </ul>
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Contact Us</h5>
+                    <p>
+                        Bleaukraft Limited <br>
+                        City Square, Nairobi <br>
+                        P.O Box 57507-00200 <br>
+                        <a href="mailto:sales@bleaukraftlimited.com" class="text-white">sales@bleaukraftlimited.com</a> <br>
+                        <a href="tel:+254724239883" class="text-white">+254724239883</a> /
+                        <a href="tel:+254728646757" class="text-white">+254728646757</a>
+                    </p>
                 </div>
             </div>
         </div>
+        <div class="text-center p-3 bg-secondary">
+            © 2024 Bleaukraft Limited. All rights reserved.
+        </div>
     </footer>
+    <a href="tel:+254724239883" class="sticky-contact-button">
+        <img src="{% static 'svg/phone_call.svg' %}" alt="Contact Us">
+    </a>
+    <a href="tel:+254724239883" class="sticky-contact-button" title="Call Us">
+        <img src="{% static 'svg/phone_call.svg' %}" alt="Contact Us">
+    </a>
+
+    <a href="mailto:sales@bleaukraftlimited.com" class="sticky-contact-button email-button" title="Email Us">
+        <img src="{% static 'svg/email.svg' %}" alt="Email Us">
+    </a>
+
+    <a href="https://wa.me/254724239883" class="sticky-contact-button whatsapp-button" title="WhatsApp Us">
+        <img src="{% static 'svg/whatsapp.svg' %}" alt="WhatsApp Us">
+    </a>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        document.querySelectorAll('.hero-image').forEach(function(image) {
-            image.addEventListener('mouseenter', function() {
-                image.classList.add('folded');
-            });
-            image.addEventListener('mouseleave', function() {
-                image.classList.remove('folded');
-            });
-        });
-    </script>
 </body>
 </html>
