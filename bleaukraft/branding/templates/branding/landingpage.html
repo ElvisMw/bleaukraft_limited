@@ -9,7 +9,32 @@
     <link rel="stylesheet" href="{% static 'branding/css/style.css' %}">
 
     <style>
+        /* Fixed Contact Info Styles */
+.contact-info {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #343a40;
+    color: #fff;
+    z-index: 1040; /* Ensure it stays above the navbar */
+    /* Additional styling */
+    padding: 10px 0;
+}
+
+/* Fixed Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 60px; /* Adjust based on the height of the contact-info bar */
+    width: 100%;
+    z-index: 1030; /* Ensure it stays below the contact-info bar */
+    background-color: #f8f9fa; /* Match with your design */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional for a shadow effect */
+}
         /* Landing page custom styles */
+        .hero-section {
+            margin-top: 120px; /* Adjust this value based on the combined height of the contact-info and navbar */
+        }
+
         .hero-collage {
             display: grid;
             grid-template-columns: repeat(10, 1fr);
@@ -445,6 +470,8 @@
             © 2024 Bleaukraft Limited. All rights reserved.
         </div>
     </footer>
+    <!-- Sticky Contact Button -->
+     <div>
     <a href="tel:+254724239883" class="sticky-contact-button">
         <img src="{% static 'svg/phone_call.svg' %}" alt="Contact Us">
     </a>
@@ -459,7 +486,21 @@
     <a href="https://wa.me/254724239883" class="sticky-contact-button whatsapp-button" title="WhatsApp Us">
         <img src="{% static 'svg/whatsapp.svg' %}" alt="WhatsApp Us">
     </a>
+</div>
+     <!-- JavaScript for Sticky Contact Buttons -->
+     <script>
+        document.getElementById('contact-phone').addEventListener('click', function() {
+            window.location.href = 'tel:+254724239883';
+        });
 
+        document.getElementById('contact-email').addEventListener('click', function() {
+            window.location.href = 'mailto:sales@bleaukraftlimited.com';
+        });
+
+        document.getElementById('contact-whatsapp').addEventListener('click', function() {
+            window.open('https://wa.me/+254724239883', '_blank');
+        });
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
