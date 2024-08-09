@@ -17,7 +17,6 @@
     background-color: #343a40;
     color: #fff;
     z-index: 1040; /* Ensure it stays above the navbar */
-    /* Additional styling */
     padding: 10px 0;
 }
 
@@ -30,6 +29,14 @@
     background-color: #f8f9fa; /* Match with your design */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional for a shadow effect */
 }
+
+/* Ensure Navbar is responsive */
+@media (max-width: 768px) {
+    .navbar {
+        top: 100px; /* Ensure it doesn't overlap with contact-info on smaller screens */
+    }
+}
+
         /* Landing page custom styles */
         .hero-section {
             margin-top: 120px; /* Adjust this value based on the combined height of the contact-info and navbar */
@@ -314,16 +321,6 @@
             <div class="col-12 col-md-6 col-lg-3 mb-2 mb-lg-0">
                 <span><img src="{% static 'svg/email.svg' %}" class="icon">
                 <a href="mailto:sales@bleaukraftlimited.com" class="text-white contact-link">sales@bleaukraftlimited.com</a>
-                </span>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3 mb-2 mb-lg-0">
-                <span><img src="{% static 'svg/location_pin.svg' %}" class="icon">
-                City Square, Nairobi
-                </span>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                <span><img src="{% static 'svg/post_office.svg' %}" class="icon">
-                P.O Box 57507-00200
                 </span>
             </div>
         </div>
