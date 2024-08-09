@@ -1,46 +1,106 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bleaukraft Limited - Creative Branding Solutions</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'branding/css/style.css' %}">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         /* Fixed Contact Info Styles */
-.contact-info {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #343a40;
-    color: #fff;
-    z-index: 1040; /* Ensure it stays above the navbar */
-    padding: 10px 0;
+        .contact-info {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #343a40;
+            color: #fff;
+            z-index: 1040;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
 
-}
+        /* Layout for Contact Details and Social Links */
+        .contact-info .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
 
-/* Fixed Navbar Styles */
-.navbar {
-    position: fixed;
-    top: 60px; /* Adjust based on the height of the contact-info bar */
-    width: 100%;
-    z-index: 1030; /* Ensure it stays below the contact-info bar */
-    background-color: #f8f9fa; /* Match with your design */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional for a shadow effect */
-}
+        .contact-info .contact-details,
+        .contact-info .social-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-/* Ensure Navbar is responsive */
-@media (max-width: 768px) {
-    .navbar {
-        top: 100px; /* Ensure it doesn't overlap with contact-info on smaller screens */
-    }
-}
+        /* Button Styles */
+        .contact-info .contact-details span,
+        .contact-info .social-links a {
+            display: flex;
+            align-items: center;
+            color: #000;
+            font-size: 1rem;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            padding: 8px 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            margin: 0 10px;
+            transition: background-color 0.3s, color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-        /* Landing page custom styles */
+        .contact-info .contact-details span:hover,
+        .contact-info .social-links a:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        /* Adjust spacing for mobile screens */
+        @media (max-width: 768px) {
+            .contact-info .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-info .contact-details,
+            .contact-info .social-links {
+                flex-direction: column;
+                margin-bottom: 10px;
+            }
+
+            .contact-info .contact-details span,
+            .contact-info .social-links a {
+                margin: 10px 0;
+            }
+        }
+
+        /* Fixed Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 60px;
+            width: 100%;
+            z-index: 1030;
+            background-color: #f8f9fa;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                top: 100px;
+            }
+        }
+
+        /* Hero Section Styles */
         .hero-section {
-            margin-top: 120px; /* Adjust this value based on the combined height of the contact-info and navbar */
+            margin-top: 120px;
         }
 
         .hero-collage {
@@ -134,157 +194,6 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
 
-        /* Professional Contact Info Styles */
-        .contact-info {
-            background-color: #343a40;
-            padding: 20px 0;
-            margin-right: 15px;
-            color: #fff;
-            border-bottom: 2px solid #007bff; /* Adds a subtle border for a more defined look */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
-        }
-
-        .contact-info .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            max-width: 1200px; /* Limits the width to keep content aligned */
-            margin: 0 auto;
-        }
-
-        .contact-info .contact-details,
-        .contact-info .social-links {
-            display: flex;
-            align-items: center;
-        }
-
-        .contact-info .contact-details span,
-        .contact-info .social-links a {
-            display: flex;
-            align-items: center;
-            margin-right: 20px;
-            color: #fff;
-            font-size: 0.9rem; /* Slightly smaller font for a cleaner look */
-        }
-
-        .contact-info .contact-details .icon,
-        .contact-info .social-links .icon {
-            margin-right: 8px;
-            font-size: 1.2rem; /* Slightly larger icon for visibility */
-        }
-
-        .contact-info .social-links a {
-            margin-left: 0;
-        }
-
-        .contact-info .contact-details a,
-        .contact-info .social-links a {
-            text-decoration: none;
-            transition: color 0.3s ease-in-out;
-        }
-
-        .contact-info .contact-details a:hover,
-        .contact-info .social-links a:hover {
-            color: #e0e0e0; /* Lighter color on hover */
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .contact-info .container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .contact-info .contact-details,
-            .contact-info .social-links {
-                margin-bottom: 10px;
-                justify-content: center;
-            }
-        }
-
-        .contact-details,
-        .social-links {
-            display: flex;
-            align-items: center;
-        }
-
-        .contact-details span,
-        .social-links a {
-            display: flex;
-            align-items: center;
-            margin-right: 100px;
-            color: #fff;
-        }
-
-        .contact-details .icon,
-        .social-links .icon {
-            margin-right: 5px;
-            font-size: 1.2rem;
-        }
-
-        .contact-info .container .contact-details .icon {
-            width: 16px;
-            height: 16px;
-        }
-
-        @media (max-width: 768px) {
-            .contact-info .container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .contact-details,
-            .social-links {
-                margin-bottom: 10px;
-                justify-content: center;
-            }
-        }
-
-        .navbar-logo {
-            background-color: white;
-            padding: 5px;
-            border-radius: 5px;
-        }
-
-        .navbar-logo .navbar-brand img {
-            display: block;
-        }
-
-        .navbar-nav .nav-link {
-            color: black !important;
-            padding: 0.5rem 1rem;
-            margin: 0 0.2rem;
-            transition: color 0.3s, background-color 0.3s;
-        }
-
-        .navbar-nav .nav-link:hover {
-            color: #ffffff;
-            background-color: #007bff; /* Bootstrap primary color */
-            text-decoration: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .navbar-nav .nav-link.disabled {
-            color: #6c757d;
-        }
-
-        .contact-info .contact-link {
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact-info .contact-link:hover {
-            color: #e0e0e0; /* Light gray for hover effect */
-        }
-
-        .company-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #007bff;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-        }
-
         /* Sticky Contact Button Styles */
         .sticky-contact-button {
             position: fixed;
@@ -301,6 +210,7 @@
             align-items: center;
             justify-content: center;
             transition: background-color 0.3s, transform 0.3s;
+            z-index: 1000;
         }
 
         .sticky-contact-button:hover {
@@ -312,110 +222,47 @@
             color: white;
             text-decoration: none;
         }
-        .sticky-contact-button img {
-            width: 24px; /* Adjust icon size */
-            height: 24px; /* Adjust icon size */
-        }
-        .sticky-contact-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            padding: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s, transform 0.3s;
-            z-index: 1000; /* Ensure buttons are on top of other content */
-        }
-
-        .sticky-contact-button:hover {
-            background-color: #0056b3;
-            transform: scale(1.1);
-        }
 
         .sticky-contact-button img {
-            width: 24px; /* Adjust icon size */
-            height: 24px; /* Adjust icon size */
+            width: 24px;
+            height: 24px;
         }
 
         .email-button {
-            bottom: 80px; /* Adjust position for stacking */
-            background-color: #007bff; /* Bootstrap primary color */
+            bottom: 80px;
+            background-color: #007bff;
         }
 
         .whatsapp-button {
-            bottom: 140px; /* Adjust position for stacking */
-            background-color: #25D366; /* WhatsApp color */
+            bottom: 140px;
+            background-color: #25D366;
         }
 
         .email-button:hover {
-            background-color: #0056b3; /* Darker color for email button */
+            background-color: #0056b3;
         }
 
         .whatsapp-button:hover {
-            background-color: #128C7E; /* Darker color for WhatsApp button */
+            background-color: #128C7E;
         }
-        /* Remove CSS rules related to social links */
-.contact-info .social-links {
-    display: none; /* Hide social links if any related rules remain */
-}
-
-/* Clean up related styles */
-.contact-info .social-links a {
-    display: none; /* Ensure social links are not displayed */
-}
-.contact-info {
-    color: white; /* Set text color to white */
-}
-
-.contact-info .contact-link,
-.contact-info .icon i {
-    color: black; /* Ensure all icons and links are white */
-}
-
-.contact-info .contact-details {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    color: black
-}
-
-.contact-info .contact-details span,
-.contact-info .contact-details a {
-    margin-right: 30px; /* Adjust this value to increase space */
-}
-
-.contact-info .contact-details .phone {
-    margin-right: 50px; /* Specific spacing after the phone number */
-}
-
-
-
-</style>
+    </style>
 </head>
+
 <body>
-   <!-- Contacts Navbar -->
-<header class="contact-info bg-primary">
-    <div class="container">
-        <div class="contact-details">
-            <span class="icon"><i class="fas fa-phone"></i></span>
-            <span class="contact-link phone">+254 724 239 883 /+254 728 646 757</span>
-            <span class="icon"><i class="fas fa-envelope"></i></span>
-            <a href="mailto:info@bleaukraft.com" class="contact-link email">info@bleaukraft.com</a>
-            <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
-            <span class="contact-link address">P.O. Box 48478-00100, City Square,Nairobi</span>
-        </div>
-        <div class="social-links">
-            <!-- Social links can be added here -->
+    <!-- Contact Info Section -->
+    <div class="contact-info bg-primary text-light">
+        <div class="container">
+            <div class="contact-details">
+                <span><i class="fas fa-phone-alt"></i> +123-456-7890</span>
+                <span><i class="fas fa-envelope"></i> info@bleaukraft.com</span>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
     </div>
-</header>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
@@ -498,98 +345,89 @@
     </header>
 
     <!-- About Section -->
-    <section class="about-section py-5">
+    <section class="about-section">
         <div class="container">
             <h2>About Us</h2>
             <p>
-                At Bleaukraft Limited, we specialize in providing comprehensive branding solutions tailored to meet the unique needs of our clients.
-                Our experienced team is dedicated to delivering creative and innovative strategies that enhance your brand's identity and visibility.
+                Bleaukraft Limited is a creative agency specializing in brand strategy, design, and digital marketing.
+                Our mission is to help brands stand out in the crowded marketplace by crafting unique and effective
+                branding solutions. Whether you're a startup or an established company, we're here to elevate your brand
+                to the next level.
             </p>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="services-section py-5 bg-light">
+    <section class="services-section">
         <div class="container">
             <h2>Our Services</h2>
             <div class="row">
                 <div class="col-md-4">
                     <div class="service-box">
                         <h3>Brand Strategy</h3>
-                        <p>We develop customized brand strategies that align with your business goals and resonate with your target audience.</p>
+                        <p>
+                            We develop a comprehensive brand strategy that aligns with your business goals and resonates
+                            with your target audience.
+                        </p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="service-box">
                         <h3>Creative Design</h3>
-                        <p>Our creative design services include logo design, packaging design, and marketing materials that stand out.</p>
+                        <p>
+                            Our design team brings your brand to life with visually compelling graphics, logos, and
+                            marketing materials.
+                        </p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="service-box">
                         <h3>Digital Marketing</h3>
-                        <p>We offer digital marketing solutions that increase your online presence and drive engagement with your brand.</p>
+                        <p>
+                            We execute effective digital marketing campaigns that drive traffic, engagement, and
+                            conversions for your brand.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="text-center text-lg-start bg-dark text-white py-4">
-        <div class="container p-4">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Contact Us</h5>
-                    <p>
-                        Bleaukraft Limited <br>
-                        City Square, Nairobi <br>
-                        P.O Box 57507-00200 <br>
-                        <a href="mailto:sales@bleaukraftlimited.com" class="text-white">sales@bleaukraftlimited.com</a> <br>
-                        <a href="tel:+254724239883" class="text-white">+254724239883</a> /
-                        <a href="tel:+254728646757" class="text-white">+254728646757</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="text-center p-3 bg-secondary">
-            © 2024 Bleaukraft Limited. All rights reserved.
-        </div>
-    </footer>
     <!-- Sticky Contact Button -->
-     <div>
-    <a href="tel:+254724239883" class="sticky-contact-button">
-        <img src="{% static 'svg/phone_call.svg' %}" alt="Contact Us">
-    </a>
-    <a href="tel:+254724239883" class="sticky-contact-button" title="Call Us">
-        <img src="{% static 'svg/phone_call.svg' %}" alt="Contact Us">
-    </a>
+    <div>
+        <a href="tel:+254724239883" class="sticky-contact-button">
+            <img src="{% static 'svg/phone_call.svg' %}" alt="Contact Us">
+        </a>
+        <a href="tel:+254724239883" class="sticky-contact-button" title="Call Us">
+            <img src="{% static 'svg/phone_call.svg' %}" alt="Contact Us">
+        </a>
 
-    <a href="mailto:sales@bleaukraftlimited.com" class="sticky-contact-button email-button" title="Email Us">
-        <img src="{% static 'svg/email.svg' %}" alt="Email Us">
-    </a>
+        <a href="mailto:sales@bleaukraftlimited.com" class="sticky-contact-button email-button" title="Email Us">
+            <img src="{% static 'svg/email.svg' %}" alt="Email Us">
+        </a>
 
-    <a href="https://wa.me/254724239883" class="sticky-contact-button whatsapp-button" title="WhatsApp Us">
-        <img src="{% static 'svg/whatsapp.svg' %}" alt="WhatsApp Us">
-    </a>
-</div>
-     <!-- JavaScript for Sticky Contact Buttons -->
-     <script>
-        document.getElementById('contact-phone').addEventListener('click', function() {
-            window.location.href = 'tel:+254724239883';
-        });
+        <a href="https://wa.me/254724239883" class="sticky-contact-button whatsapp-button" title="WhatsApp Us">
+            <img src="{% static 'svg/whatsapp.svg' %}" alt="WhatsApp Us">
+        </a>
+    </div>
+         <!-- JavaScript for Sticky Contact Buttons -->
+         <script>
+            document.getElementById('contact-phone').addEventListener('click', function() {
+                window.location.href = 'tel:+254724239883';
+            });
 
-        document.getElementById('contact-email').addEventListener('click', function() {
-            window.location.href = 'mailto:sales@bleaukraftlimited.com';
-        });
+            document.getElementById('contact-email').addEventListener('click', function() {
+                window.location.href = 'mailto:sales@bleaukraftlimited.com';
+            });
 
-        document.getElementById('contact-whatsapp').addEventListener('click', function() {
-            window.open('https://wa.me/+254724239883', '_blank');
-        });
-    </script>
+            document.getElementById('contact-whatsapp').addEventListener('click', function() {
+                window.open('https://wa.me/+254724239883', '_blank');
+            });
+        </script>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
