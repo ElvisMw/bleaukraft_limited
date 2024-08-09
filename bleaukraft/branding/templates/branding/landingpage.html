@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         /* Fixed Contact Info Styles */
-        .contact-info {
+        .contact-info.contact-info-bar {
             position: fixed;
             top: 0;
             width: 100%;
@@ -26,23 +26,23 @@
         }
 
         /* Layout for Contact Details and Social Links */
-        .contact-info .container {
+        .contact-info.contact-info-bar .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 100%;
         }
 
-        .contact-info .contact-details,
-        .contact-info .social-links {
+        .contact-info.contact-info-bar .contact-details,
+        .contact-info.contact-info-bar .social-links {
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         /* Button Styles */
-        .contact-info .contact-details span,
-        .contact-info .social-links a {
+        .contact-info.contact-info-bar .contact-details span,
+        .contact-info.contact-info-bar .social-links a {
             display: flex;
             align-items: center;
             color: #000;
@@ -57,28 +57,20 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .contact-info .contact-details span:hover,
-        .contact-info .social-links a:hover {
+        .contact-info.contact-info-bar .contact-details span:hover,
+        .contact-info.contact-info-bar .social-links a:hover {
             background-color: #007bff;
             color: #fff;
         }
 
         /* Adjust spacing for mobile screens */
         @media (max-width: 768px) {
-            .contact-info .container {
-                flex-direction: column;
-                text-align: center;
+            .contact-info.contact-info-bar {
+                display: none;
             }
 
-            .contact-info .contact-details,
-            .contact-info .social-links {
-                flex-direction: column;
-                margin-bottom: 10px;
-            }
-
-            .contact-info .contact-details span,
-            .contact-info .social-links a {
-                margin: 10px 0;
+            .navbar {
+                top: 0; /* Adjust top position if necessary */
             }
         }
 
@@ -94,7 +86,7 @@
 
         @media (max-width: 768px) {
             .navbar {
-                top: 100px;
+                top: 0; /* Adjust top position if necessary */
             }
         }
 
@@ -250,7 +242,7 @@
 
 <body>
     <!-- Contact Info Section -->
-    <div class="contact-info bg-primary text-light">
+    <div class="contact-info contact-info-bar bg-primary text-light">
         <div class="container">
             <div class="contact-details">
                 <span><i class="fas fa-phone-alt"></i> +123-456-7890</span>
@@ -429,5 +421,6 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 
 </html>
