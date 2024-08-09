@@ -18,6 +18,7 @@
     color: #fff;
     z-index: 1040; /* Ensure it stays above the navbar */
     padding: 10px 0;
+
 }
 
 /* Fixed Navbar Styles */
@@ -133,10 +134,14 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
 
+        /* Professional Contact Info Styles */
         .contact-info {
             background-color: #343a40;
             padding: 20px 0;
+            margin-right: 15px;
             color: #fff;
+            border-bottom: 2px solid #007bff; /* Adds a subtle border for a more defined look */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
         }
 
         .contact-info .container {
@@ -144,6 +149,58 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            max-width: 1200px; /* Limits the width to keep content aligned */
+            margin: 0 auto;
+        }
+
+        .contact-info .contact-details,
+        .contact-info .social-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info .contact-details span,
+        .contact-info .social-links a {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            color: #fff;
+            font-size: 0.9rem; /* Slightly smaller font for a cleaner look */
+        }
+
+        .contact-info .contact-details .icon,
+        .contact-info .social-links .icon {
+            margin-right: 8px;
+            font-size: 1.2rem; /* Slightly larger icon for visibility */
+        }
+
+        .contact-info .social-links a {
+            margin-left: 0;
+        }
+
+        .contact-info .contact-details a,
+        .contact-info .social-links a {
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .contact-info .contact-details a:hover,
+        .contact-info .social-links a:hover {
+            color: #e0e0e0; /* Lighter color on hover */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-info .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-info .contact-details,
+            .contact-info .social-links {
+                margin-bottom: 10px;
+                justify-content: center;
+            }
         }
 
         .contact-details,
@@ -156,7 +213,7 @@
         .social-links a {
             display: flex;
             align-items: center;
-            margin-right: 20px;
+            margin-right: 100px;
             color: #fff;
         }
 
@@ -304,29 +361,61 @@
         .whatsapp-button:hover {
             background-color: #128C7E; /* Darker color for WhatsApp button */
         }
+        /* Remove CSS rules related to social links */
+.contact-info .social-links {
+    display: none; /* Hide social links if any related rules remain */
+}
+
+/* Clean up related styles */
+.contact-info .social-links a {
+    display: none; /* Ensure social links are not displayed */
+}
+.contact-info {
+    color: white; /* Set text color to white */
+}
+
+.contact-info .contact-link,
+.contact-info .icon i {
+    color: black; /* Ensure all icons and links are white */
+}
+
+.contact-info .contact-details {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: black
+}
+
+.contact-info .contact-details span,
+.contact-info .contact-details a {
+    margin-right: 30px; /* Adjust this value to increase space */
+}
+
+.contact-info .contact-details .phone {
+    margin-right: 50px; /* Specific spacing after the phone number */
+}
+
+
 
 </style>
 </head>
 <body>
-    <!-- Contacts Navbar -->
+   <!-- Contacts Navbar -->
 <header class="contact-info bg-primary">
     <div class="container">
-        <div class="row contact-details text-white">
-            <div class="col-12 col-md-6 col-lg-3 mb-2 mb-lg-0">
-                <span><img src="{% static 'svg/phone_call.svg' %}" class="icon">
-                <a href="tel:+254724239883" class="text-white contact-link">+254724239883</a> /
-                <a href="tel:+254728646757" class="text-white contact-link">+254728646757</a>
-                </span>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3 mb-2 mb-lg-0">
-                <span><img src="{% static 'svg/email.svg' %}" class="icon">
-                <a href="mailto:sales@bleaukraftlimited.com" class="text-white contact-link">sales@bleaukraftlimited.com</a>
-                </span>
-            </div>
+        <div class="contact-details">
+            <span class="icon"><i class="fas fa-phone"></i></span>
+            <span class="contact-link phone">+234 800 000 0000</span>
+            <span class="icon"><i class="fas fa-envelope"></i></span>
+            <a href="mailto:info@bleaukraft.com" class="contact-link email">info@bleaukraft.com</a>
+            <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+            <span class="contact-link address">123 Main St, Lagos, Nigeria</span>
+        </div>
+        <div class="social-links">
+            <!-- Social links can be added here -->
         </div>
     </div>
 </header>
-
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
