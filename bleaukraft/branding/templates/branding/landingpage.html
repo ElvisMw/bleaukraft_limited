@@ -294,7 +294,7 @@
     </div>
 </nav>
 
-    <br>
+<br>
 
     <!-- Hero Section -->
     <header class="hero-section">
@@ -427,6 +427,31 @@
                 window.open('https://wa.me/+254724239883', '_blank');
             });
         </script>
+
+        <!-- JavaScript for Hero Image Reveal -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const heroImages = document.querySelectorAll(".hero-image");
+                const delay = 900; // Delay between reveals
+                const loopInterval = 4000; // Loop interval in milliseconds (10 seconds)
+
+                function revealNextImage(index) {
+                    if (index < heroImages.length) {
+                        heroImages[index].classList.add("folded");
+                        setTimeout(() => revealNextImage(index + 1), delay); // Adjust the delay as needed
+                    } else {
+                        // Reset all images and start over after the loop interval
+                        setTimeout(() => {
+                            heroImages.forEach(img => img.classList.remove("folded")); // Reset the folded state
+                            revealNextImage(0); // Start the reveal process again
+                        }, loopInterval);
+                    }
+                }
+
+                revealNextImage(0); // Start the image reveal process
+            });
+        </script>
+
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
