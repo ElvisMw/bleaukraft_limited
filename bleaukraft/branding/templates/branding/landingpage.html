@@ -298,16 +298,22 @@
             }
 
         /* Experience section */
+        <style>
             .experience {
-                background-color: #f8f9fa;
-                border-top: 5px solid #007bff;
+                background-color: #007bff; /* Primary color */
+            }
+
+            .experience h2 {
+                color: #ffffff; /* Title color */
             }
 
             .experience-item {
-                background-color: #ffffff;
+                background-color: #0056b3; /* Darker shade of primary color */
                 border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border: 1px solid #ffffff; /* Thin white border */
                 padding: 2rem;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                margin-bottom: 1rem;
                 transition: transform 0.3s ease-in-out;
             }
 
@@ -315,20 +321,31 @@
                 transform: translateY(-5px);
             }
 
+            .experience-item i {
+                color: #ffffff; /* Icon color */
+            }
+
             .experience-item h3 {
                 font-size: 3rem;
-                color: #007bff;
+                color: #ffffff; /* Text color */
             }
 
             .experience-item p {
                 font-size: 1.25rem;
-                color: #495057;
+                color: #ffffff; /* Text color */
             }
 
             .experience-item p.lead {
                 font-weight: bold;
             }
+
+            /* Ensure that items are evenly spaced */
+            .row > [class*='col-'] {
+                display: flex;
+                justify-content: center;
+            }
         </style>
+
 
 </head>
 <body>
@@ -471,46 +488,42 @@
 </section>
 
 <!-- Experience Section -->
-<section class="experience py-5 bg-light">
+<section class="experience py-5 bg-primary text-white">
     <div class="container">
+        <h2 class="text-center mb-5">Our Story in Statics</h2>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="experience-item text-center">
+                    <i class="fas fa-briefcase fa-3x mb-3"></i>
                     <h3 class="display-4 font-weight-bold mb-2">10+</h3>
                     <p class="lead mb-0">Years of Experience</p>
                 </div>
             </div>
-            <div class="col-md-8">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="experience-item text-center">
-                            <h3 class="display-4 font-weight-bold mb-2">75%</h3>
-                            <p class="lead mb-0">Brand Names Clients</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="experience-item text-center">
-                            <h3 class="display-4 font-weight-bold mb-2">20%</h3>
-                            <p class="lead mb-0">East African Brands</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="experience-item text-center">
-                            <h3 class="display-4 font-weight-bold mb-2">15%</h3>
-                            <p class="lead mb-0">South African Brands</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="experience-item text-center">
-                            <h3 class="display-4 font-weight-bold mb-2">10%</h3>
-                            <p class="lead mb-0">European Brands</p>
-                        </div>
-                    </div>
+            <div class="col-md-3">
+                <div class="experience-item text-center">
+                    <i class="fas fa-balance-scale fa-3x mb-3"></i>
+                    <h3 class="display-4 font-weight-bold mb-2">2000+</h3>
+                    <p class="lead mb-0">Brand Names</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="experience-item text-center">
+                    <i class="fas fa-globe-africa fa-3x mb-3"></i>
+                    <h3 class="display-4 font-weight-bold mb-2">40%</h3>
+                    <p class="lead mb-0">African Brands</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="experience-item text-center">
+                    <i class="fas fa-globe-europe fa-3x mb-3"></i>
+                    <h3 class="display-4 font-weight-bold mb-2">20%</h3>
+                    <p class="lead mb-0">European Brands</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 
 
     <!-- Sticky Contact Button -->
