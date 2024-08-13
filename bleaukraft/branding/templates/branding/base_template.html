@@ -294,143 +294,41 @@
     </div>
 </nav>
 
-    <br>
+<!-- Sticky Contact Button -->
+<div>
+    <a href="tel:+254724239883" class="sticky-contact-button">
+        <img src="{% static 'svg/phone_call.svg' %}" alt="Contact Us">
+    </a>
+    <a href="tel:+254724239883" class="sticky-contact-button" title="Call Us">
+        <img src="{% static 'svg/phone_call.svg' %}" alt="Contact Us">
+    </a>
 
-    <!-- Hero Section -->
-    <header class="hero-section">
-        <div class="container">
-            <div class="hero-collage">
-                <div class="hero-image bg-primary" data-letter="B">
-                    <img src="{% static 'images/hero1.jpg' %}" alt="Image 1">
-                    <span>B</span>
-                </div>
-                <div class="hero-image bg-primary" data-letter="L">
-                    <img src="{% static 'images/hero2.jpg' %}" alt="Image 2">
-                    <span>L</span>
-                </div>
-                <div class="hero-image bg-primary" data-letter="E">
-                    <img src="{% static 'images/hero3.jpg' %}" alt="Image 3">
-                    <span>E</span>
-                </div>
-                <div class="hero-image bg-primary" data-letter="A">
-                    <img src="{% static 'images/hero7.jpg' %}" alt="Image 4">
-                    <span>A</span>
-                </div>
-                <div class="hero-image bg-primary" data-letter="U">
-                    <img src="{% static 'images/hero9.jpg' %}" alt="Image 5">
-                    <span>U</span>
-                </div>
-                <div class="hero-image bg-primary" data-letter="K">
-                    <img src="{% static 'images/hero6.jpg' %}" alt="Image 6">
-                    <span>K</span>
-                </div>
-                <div class="hero-image bg-primary" data-letter="R">
-                    <img src="{% static 'images/hero4.jpg' %}" alt="Image 7">
-                    <span>R</span>
-                </div>
-                <div class="hero-image bg-primary" data-letter="A">
-                    <img src="{% static 'images/hero5.jpg' %}" alt="Image 8">
-                    <span>A</span>
-                </div>
-                <div class="hero-image bg-primary" data-letter="F">
-                    <img src="{% static 'images/hero2.jpg' %}" alt="Image 9">
-                    <span>F</span>
-                </div>
-                <div class="hero-image bg-primary" data-letter="T">
-                    <img src="{% static 'images/hero10.jpeg' %}" alt="Image 10">
-                    <span>T</span>
-                </div>
-            </div>
-            <h1 class="hero-title">Welcome to Bleaukraft Limited</h1>
-            <h3 class="hero-subtitle">Your Partner in Creative Branding Solutions</h3>
-            <h4 class="hero-tagline">From Concept to Completion, We've Got You Covered</h4>
-        </div>
-    </header>
+    <a href="mailto:sales@bleaukraftlimited.com" class="sticky-contact-button email-button" title="Email Us">
+        <img src="{% static 'svg/email.svg' %}" alt="Email Us">
+    </a>
 
-    <!-- About Section -->
-    <section class="about-section">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>
-                Bleaukraft Limited is a creative agency specializing in brand strategy, design, and digital marketing.
-                Our mission is to help brands stand out in the crowded marketplace by crafting unique and effective
-                branding solutions. Whether you're a startup or an established company, we're here to elevate your brand
-                to the next level.
-            </p>
-        </div>
-    </section>
+    <a href="https://wa.me/254724239883" class="sticky-contact-button whatsapp-button" title="WhatsApp Us">
+        <img src="{% static 'svg/whatsapp.svg' %}" alt="WhatsApp Us">
+    </a>
+</div>
+     <!-- JavaScript for Sticky Contact Buttons -->
+     <script>
+        document.getElementById('contact-phone').addEventListener('click', function() {
+            window.location.href = 'tel:+254724239883';
+        });
 
-    <!-- Services Section -->
-    <section class="services-section">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="service-box">
-                        <h3>Brand Strategy</h3>
-                        <p>
-                            We develop a comprehensive brand strategy that aligns with your business goals and resonates
-                            with your target audience.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-box">
-                        <h3>Creative Design</h3>
-                        <p>
-                            Our design team brings your brand to life with visually compelling graphics, logos, and
-                            marketing materials.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-box">
-                        <h3>Digital Marketing</h3>
-                        <p>
-                            We execute effective digital marketing campaigns that drive traffic, engagement, and
-                            conversions for your brand.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        document.getElementById('contact-email').addEventListener('click', function() {
+            window.location.href = 'mailto:sales@bleaukraftlimited.com';
+        });
 
-    <!-- Sticky Contact Button -->
-    <div>
-        <a href="tel:+254724239883" class="sticky-contact-button">
-            <img src="{% static 'svg/phone_call.svg' %}" alt="Contact Us">
-        </a>
-        <a href="tel:+254724239883" class="sticky-contact-button" title="Call Us">
-            <img src="{% static 'svg/phone_call.svg' %}" alt="Contact Us">
-        </a>
+        document.getElementById('contact-whatsapp').addEventListener('click', function() {
+            window.open('https://wa.me/+254724239883', '_blank');
+        });
+    </script>
 
-        <a href="mailto:sales@bleaukraftlimited.com" class="sticky-contact-button email-button" title="Email Us">
-            <img src="{% static 'svg/email.svg' %}" alt="Email Us">
-        </a>
-
-        <a href="https://wa.me/254724239883" class="sticky-contact-button whatsapp-button" title="WhatsApp Us">
-            <img src="{% static 'svg/whatsapp.svg' %}" alt="WhatsApp Us">
-        </a>
-    </div>
-         <!-- JavaScript for Sticky Contact Buttons -->
-         <script>
-            document.getElementById('contact-phone').addEventListener('click', function() {
-                window.location.href = 'tel:+254724239883';
-            });
-
-            document.getElementById('contact-email').addEventListener('click', function() {
-                window.location.href = 'mailto:sales@bleaukraftlimited.com';
-            });
-
-            document.getElementById('contact-whatsapp').addEventListener('click', function() {
-                window.open('https://wa.me/+254724239883', '_blank');
-            });
-        </script>
-
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 
