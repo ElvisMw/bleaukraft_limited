@@ -298,23 +298,26 @@
             }
 
         /* Experience section */
-        <style>
             .experience {
                 background-color: #007bff; /* Primary color */
+                border-radius: 15px; /* Curved edges for the section */
+                padding: 2rem; /* Padding for spacing inside the section */
+                overflow: hidden; /* Ensures that child elements respect the rounded corners */
             }
 
-            .experience h2 {
-                color: #ffffff; /* Title color */
+            .container {
+                border-radius: 15px; /* Curved edges for the container */
+                overflow: hidden; /* Ensures that the background color and curves apply to child elements */
+                padding: 2rem; /* Padding for better spacing */
             }
 
             .experience-item {
                 background-color: #0056b3; /* Darker shade of primary color */
                 border-radius: 8px;
                 border: 1px solid #ffffff; /* Thin white border */
-                padding: 2rem;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                margin-bottom: 1rem;
                 transition: transform 0.3s ease-in-out;
+                margin-bottom: 1rem; /* Add spacing between items */
             }
 
             .experience-item:hover {
@@ -345,6 +348,7 @@
                 justify-content: center;
             }
         </style>
+
 
 
 </head>
@@ -488,8 +492,9 @@
 </section>
 
 <!-- Experience Section -->
+<!-- Experience Section -->
 <section class="experience py-5 bg-primary text-white">
-    <div class="container">
+    <div class="container rounded-lg overflow-hidden">
         <h2 class="text-center mb-5">Our Story in Statics</h2>
         <div class="row">
             <div class="col-md-3">
@@ -509,21 +514,20 @@
             <div class="col-md-3">
                 <div class="experience-item text-center">
                     <i class="fas fa-globe-africa fa-3x mb-3"></i>
-                    <h3 class="display-4 font-weight-bold mb-2">40%</h3>
+                    <h3 class="display-4 font-weight-bold mb-2">20%</h3>
                     <p class="lead mb-0">African Brands</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="experience-item text-center">
                     <i class="fas fa-globe-europe fa-3x mb-3"></i>
-                    <h3 class="display-4 font-weight-bold mb-2">20%</h3>
+                    <h3 class="display-4 font-weight-bold mb-2">10%</h3>
                     <p class="lead mb-0">European Brands</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 
 
     <!-- Sticky Contact Button -->
