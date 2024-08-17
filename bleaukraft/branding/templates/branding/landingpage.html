@@ -696,6 +696,140 @@
     color: #007bff;
 }
 
+/* Policy Timeline Section */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 2rem;
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline-item {
+  position: relative;
+  padding: 1rem 1rem 1rem 4rem;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  margin-bottom: 2rem; /* Space between items */
+}
+
+.timeline-year {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: white;
+  border-radius: 50%;
+  background-color: #007bff; /* Primary blue color */
+  border: 1px solid #007bff;
+  box-shadow: inset 0 0 0 1px white;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: pulse 2s infinite; /* Apply pulse animation */
+}
+
+.timeline-year i {
+  font-size: 1.5rem;
+}
+
+.timeline-content {
+  margin-left: 4rem;
+}
+
+.timeline-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.text-muted {
+  color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.timeline-item:hover {
+  background-color: rgba(230, 230, 230, 0.48);
+  border-radius: 0.25rem;
+}
+
+.timeline-item:not(:last-child)::after {
+  position: absolute;
+  content: "";
+  width: 4px;
+  background-color: #007bff; /* Primary blue color */
+  left: 1.5rem; /* Align with the vertical line */
+  top: 0;
+  bottom: -1rem;
+  z-index: -1;
+}
+
+.btn-primary {
+  background-color: #007bff; /* Primary blue color */
+  border: none;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 0.25rem;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker shade of blue */
+  transition: background-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .timeline-item {
+    padding-left: 2rem; /* Adjust for smaller screens */
+  }
+
+  .timeline-year {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+  }
+
+  .timeline-content {
+    margin-left: 3rem;
+  }
+}
+/* Bounce Animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.timeline-year {
+  animation: bounce 2s infinite;
+}
+
+
 
 
         </style>
@@ -1183,6 +1317,65 @@
     </div>
 </section>
 
+<!-- Policy Timeline Section -->
+<section id="policy-timeline" class="my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading text-uppercase">Our Policies</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="timeline">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-year">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4 class="timeline-title">Quality Commitment</h4>
+                            <p class="text-muted">We are committed to maintaining the highest quality standards in all our services. This ensures complete customer satisfaction and fosters trust in our brand.</p>
+                        </div>
+                    </div>
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-year">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4 class="timeline-title">Innovation</h4>
+                            <p class="text-muted">We prioritize innovation by continually seeking new ways to improve and advance our services. This allows us to meet evolving needs and stay ahead in the industry.</p>
+                        </div>
+                    </div>
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-year">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4 class="timeline-title">Customer Service</h4>
+                            <p class="text-muted">Our customer service policy ensures that we provide prompt and effective support. We address all client inquiries and concerns to build strong, long-lasting relationships.</p>
+                        </div>
+                    </div>
+                    <!-- Timeline Item 4 -->
+                    <div class="timeline-item">
+                        <div class="timeline-year">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4 class="timeline-title">Sustainability</h4>
+                            <p class="text-muted">We are dedicated to sustainable practices that minimize environmental impact. Our policies promote responsible resource use and support our commitment to a greener future.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="#learn-more" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
