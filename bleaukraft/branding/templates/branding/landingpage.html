@@ -697,21 +697,25 @@
 }
 
 /* Policy Timeline Section */
-/* Policy Timeline Section */
 #policy-timeline {
   background-color: #007bff; /* Primary color background for the section */
   color: black; /* Set text color to black */
   padding: 3rem 0; /* Adjust padding as needed */
+  position: relative; /* Ensure positioning context for absolute elements */
 }
 
 #policy-timeline .container {
   max-width: 1200px; /* Adjust if needed */
   position: relative; /* Ensure positioning context for the timeline */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the section takes full viewport height */
 }
 
 #policy-timeline .timeline {
   position: relative;
   padding: 2rem 0;
+  flex: 1; /* Allow timeline to grow and fill available space */
 }
 
 /* Ensure .timeline takes full height of its content */
@@ -720,7 +724,7 @@
   position: absolute;
   width: 4px;
   background-color: white; /* Color of the vertical line */
-  left: 1.5rem; /* Position line to the left of timeline items */
+  left: 2rem; /* Move line to the right (adjust as needed) */
   top: 0; /* Start from the top of the container */
   bottom: 0; /* Extend to the bottom of the container */
   z-index: 0; /* Ensure line is behind items */
@@ -729,7 +733,7 @@
 #policy-timeline .timeline-item {
   position: relative;
   color: black; /* Ensure text color inside timeline items is black */
-  padding: 1rem 1rem 1rem 4rem;
+  padding: 1rem 1rem 1rem 7rem; /* Adjust padding to account for the moved line */
   cursor: pointer;
   transition: background 0.3s ease-in-out;
   margin-bottom: 2rem; /* Space between items */
@@ -749,15 +753,15 @@
   background-color: white; /* Background for timeline year circle */
   border: 1px solid white; /* Border color for the circle */
   box-shadow: inset 0 0 0 1px black; /* Adjusted shadow for visibility */
-  left: -1.5rem; /* Position left of the timeline item */
+  left: 0.5rem; /* Align icon with the moved line */
   top: 50%;
   transform: translateY(-50%);
 }
 
 #policy-timeline .timeline-content {
   background-color: #007bff; /* Primary blue background for content */
-  color: white; /* Ensure text color is white for contrast */
-  margin-left: 4rem;
+  color: black; /* Ensure text color is black for contrast */
+  margin-left: 5rem; /* Adjust margin-left to position content correctly */
   padding: 1rem;
   border-radius: 0.25rem; /* Optional: add border radius for rounded corners */
 }
@@ -765,16 +769,36 @@
 #policy-timeline .timeline-title {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
-  color: white; /* Ensure title color is white */
+  color: black; /* Ensure title color is black */
 }
 
 #policy-timeline .text-muted {
-  color: rgba(255, 255, 255, 0.8); /* Muted text in white with reduced opacity */
+  color: rgba(0, 0, 0, 0.8); /* Muted text in black with reduced opacity */
 }
 
 #policy-timeline .timeline-item:hover {
   background-color: rgba(230, 230, 230, 0.48); /* Light hover effect */
   border-radius: 0.25rem;
+}
+
+/* Button Styling */
+#policy-timeline .btn-learn-more {
+  display: block; /* Make the button a block element */
+  margin: 2rem auto; /* Center the button and add margin at top and bottom */
+  padding: 0.75rem 1.5rem; /* Adjust padding */
+  font-size: 1rem; /* Font size for the button */
+  border-radius: 0.25rem; /* Rounded corners */
+  color: #fff; /* White text */
+  background-color: #007bff; /* Primary blue background */
+  border: 1px solid #007bff; /* Border color matching the background */
+  text-align: center; /* Center the text inside the button */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+}
+
+#policy-timeline .btn-learn-more:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  border-color: #0056b3; /* Matching border color on hover */
+  text-decoration: none; /* Remove underline on hover */
 }
 
 @media (max-width: 768px) {
@@ -786,10 +810,17 @@
     width: 2.5rem;
     height: 2.5rem;
     font-size: 1.2rem;
+    left: 0.7rem; /* Adjust for smaller screens */
   }
 
   #policy-timeline .timeline-content {
-    margin-left: 3rem;
+    margin-left: 4rem;
+  }
+
+  /* Button Styling for smaller screens */
+  #policy-timeline .btn-learn-more {
+    padding: 0.5rem 1rem; /* Adjust padding for smaller screens */
+    font-size: 0.9rem; /* Smaller font size */
   }
 }
 
@@ -807,11 +838,10 @@
 }
 
 #policy-timeline .timeline-year {
-  animation: bounce 2s infinite;
+  animation: bounce 7s infinite;
 }
 
-
-        </style>
+</style>
 </head>
 <body>
     <!-- Contact Info Section -->
@@ -1348,8 +1378,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-center mt-4">
-                    <a href="#learn-more" class="btn btn-primary">Learn More</a>
+                <!-- Button positioned at the bottom -->
+                <div class="text-center">
+                    <a href="#learn-more" class="btn btn-primary btn-learn-more">Learn More</a>
                 </div>
             </div>
         </div>
