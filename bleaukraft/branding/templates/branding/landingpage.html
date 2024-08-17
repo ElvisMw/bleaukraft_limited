@@ -706,11 +706,24 @@
 
 #policy-timeline .container {
   max-width: 1200px; /* Adjust if needed */
+  position: relative; /* Ensure positioning context for the timeline */
 }
 
 #policy-timeline .timeline {
   position: relative;
   padding: 2rem 0;
+}
+
+/* Ensure .timeline takes full height of its content */
+#policy-timeline .timeline::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background-color: white; /* Color of the vertical line */
+  left: 1.5rem; /* Position line to the left of timeline items */
+  top: 0; /* Start from the top of the container */
+  bottom: 0; /* Extend to the bottom of the container */
+  z-index: 0; /* Ensure line is behind items */
 }
 
 #policy-timeline .timeline-item {
@@ -736,10 +749,9 @@
   background-color: white; /* Background for timeline year circle */
   border: 1px solid white; /* Border color for the circle */
   box-shadow: inset 0 0 0 1px black; /* Adjusted shadow for visibility */
-  left: 0;
+  left: -1.5rem; /* Position left of the timeline item */
   top: 50%;
   transform: translateY(-50%);
-  z-index: 2; /* Ensure the timeline year is above the item */
 }
 
 #policy-timeline .timeline-content {
@@ -748,7 +760,6 @@
   margin-left: 4rem;
   padding: 1rem;
   border-radius: 0.25rem; /* Optional: add border radius for rounded corners */
-  z-index: 1; /* Ensure the content is above the line */
 }
 
 #policy-timeline .timeline-title {
@@ -766,34 +777,6 @@
   border-radius: 0.25rem;
 }
 
-#policy-timeline .timeline-item:not(:last-child)::after {
-  position: absolute;
-  content: "";
-  width: 4px;
-  background-color: white; /* Primary blue color for vertical line */
-  left: 1.5rem; /* Align with the vertical line */
-  top: 0;
-  bottom: -1rem;
-  z-index: 0; /* Ensure the vertical line is behind everything */
-}
-
-#policy-timeline .btn-primary {
-  background-color: #007bff; /* Primary blue color */
-  border: none;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  border-radius: 0.25rem;
-  text-decoration: none;
-}
-
-#policy-timeline .btn-primary:hover {
-  background-color: #0056b3; /* Darker shade of blue */
-  transition: background-color 0.3s ease;
-}
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
   #policy-timeline .timeline-item {
     padding-left: 2rem; /* Adjust for smaller screens */
@@ -826,7 +809,6 @@
 #policy-timeline .timeline-year {
   animation: bounce 2s infinite;
 }
-
 
 
         </style>
