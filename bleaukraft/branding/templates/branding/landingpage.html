@@ -699,7 +699,7 @@
 /* Policy Timeline Section */
 /* Policy Timeline Section */
 #policy-timeline {
-  background-color: #007bff; /* Primary color background */
+  background-color: #007bff; /* Primary color background for the section */
   color: black; /* Set text color to black */
   padding: 3rem 0; /* Adjust padding as needed */
 }
@@ -715,7 +715,6 @@
 
 #policy-timeline .timeline-item {
   position: relative;
-  background-color: white; /* Background for timeline items */
   color: black; /* Ensure text color inside timeline items is black */
   padding: 1rem 1rem 1rem 4rem;
   cursor: pointer;
@@ -744,18 +743,22 @@
 }
 
 #policy-timeline .timeline-content {
+  background-color: #007bff; /* Primary blue background for content */
+  color: white; /* Ensure text color is white for contrast */
   margin-left: 4rem;
+  padding: 1rem;
+  border-radius: 0.25rem; /* Optional: add border radius for rounded corners */
   z-index: 1; /* Ensure the content is above the line */
 }
 
 #policy-timeline .timeline-title {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
-  color: black; /* Ensure title color is black */
+  color: white; /* Ensure title color is white */
 }
 
 #policy-timeline .text-muted {
-  color: rgba(0, 0, 0, 0.7); /* Darker text color for muted text */
+  color: rgba(255, 255, 255, 0.8); /* Muted text in white with reduced opacity */
 }
 
 #policy-timeline .timeline-item:hover {
