@@ -722,7 +722,7 @@ body {
 
 .timeline-item {
   position: relative;
-  padding: 1rem 1rem 1rem 4rem;
+  padding: 1rem 1rem 1rem 5rem; /* Increase padding to prevent overlap */
   cursor: pointer;
   transition: background 0.3s ease-in-out;
   margin-bottom: 2rem; /* Space between items */
@@ -752,7 +752,7 @@ body {
 }
 
 .timeline-content {
-  margin-left: 4rem;
+  margin-left: 5rem; /* Adjust margin to match the padding of .timeline-item */
 }
 
 .timeline-title {
@@ -799,7 +799,7 @@ body {
 
 @media (max-width: 768px) {
   .timeline-item {
-    padding-left: 2rem; /* Adjust for smaller screens */
+    padding-left: 3rem; /* Adjust for smaller screens */
   }
 
   .timeline-year {
@@ -809,9 +809,10 @@ body {
   }
 
   .timeline-content {
-    margin-left: 3rem;
+    margin-left: 3.5rem;
   }
 }
+
 /* Bounce Animation */
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
@@ -828,8 +829,6 @@ body {
 .timeline-year {
   animation: bounce 2s infinite;
 }
-
-
 
 
         </style>
