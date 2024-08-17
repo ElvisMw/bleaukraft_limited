@@ -697,38 +697,34 @@
 }
 
 /* Policy Timeline Section */
-* {
-  box-sizing: border-box;
+/* Policy Timeline Section */
+#policy-timeline {
+  background-color: #007bff; /* Primary color background */
+  color: black; /* Set text color to black */
+  padding: 3rem 0; /* Adjust padding as needed */
 }
 
-body {
-  padding: 2rem;
-  margin: 0;
-  height: 100vh;
-  display: grid;
-  place-items: center;
-  background-color: white;
-  font-family: "Poppins", sans-serif;
+#policy-timeline .container {
+  max-width: 1200px; /* Adjust if needed */
 }
 
-.container {
-  max-width: 1200px;
-}
-
-.timeline {
+#policy-timeline .timeline {
   position: relative;
   padding: 2rem 0;
 }
 
-.timeline-item {
+#policy-timeline .timeline-item {
   position: relative;
-  padding: 1rem 1rem 1rem 5rem; /* Increase padding to prevent overlap */
+  background-color: white; /* Background for timeline items */
+  color: black; /* Ensure text color inside timeline items is black */
+  padding: 1rem 1rem 1rem 4rem;
   cursor: pointer;
   transition: background 0.3s ease-in-out;
   margin-bottom: 2rem; /* Space between items */
+  z-index: 1; /* Ensure the timeline item is above the line */
 }
 
-.timeline-year {
+#policy-timeline .timeline-year {
   position: absolute;
   width: 3rem;
   height: 3rem;
@@ -736,52 +732,49 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
-  color: white;
+  color: black; /* Color for the icon and text inside the circle */
   border-radius: 50%;
-  background-color: #007bff; /* Primary blue color */
-  border: 1px solid #007bff;
-  box-shadow: inset 0 0 0 1px white;
+  background-color: white; /* Background for timeline year circle */
+  border: 1px solid white; /* Border color for the circle */
+  box-shadow: inset 0 0 0 1px black; /* Adjusted shadow for visibility */
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  animation: pulse 2s infinite; /* Apply pulse animation */
+  z-index: 2; /* Ensure the timeline year is above the item */
 }
 
-.timeline-year i {
-  font-size: 1.5rem;
+#policy-timeline .timeline-content {
+  margin-left: 4rem;
+  z-index: 1; /* Ensure the content is above the line */
 }
 
-.timeline-content {
-  margin-left: 5rem; /* Adjust margin to match the padding of .timeline-item */
-}
-
-.timeline-title {
+#policy-timeline .timeline-title {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
-  color: #000;
+  color: black; /* Ensure title color is black */
 }
 
-.text-muted {
-  color: rgba(0, 0, 0, 0.7) !important;
+#policy-timeline .text-muted {
+  color: rgba(0, 0, 0, 0.7); /* Darker text color for muted text */
 }
 
-.timeline-item:hover {
-  background-color: rgba(230, 230, 230, 0.48);
+#policy-timeline .timeline-item:hover {
+  background-color: rgba(230, 230, 230, 0.48); /* Light hover effect */
   border-radius: 0.25rem;
 }
 
-.timeline-item:not(:last-child)::after {
+#policy-timeline .timeline-item:not(:last-child)::after {
   position: absolute;
   content: "";
   width: 4px;
-  background-color: #007bff; /* Primary blue color */
+  background-color: white; /* Primary blue color for vertical line */
   left: 1.5rem; /* Align with the vertical line */
   top: 0;
   bottom: -1rem;
-  z-index: -1;
+  z-index: 0; /* Ensure the vertical line is behind everything */
 }
 
-.btn-primary {
+#policy-timeline .btn-primary {
   background-color: #007bff; /* Primary blue color */
   border: none;
   color: white;
@@ -792,24 +785,25 @@ body {
   text-decoration: none;
 }
 
-.btn-primary:hover {
+#policy-timeline .btn-primary:hover {
   background-color: #0056b3; /* Darker shade of blue */
   transition: background-color 0.3s ease;
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .timeline-item {
-    padding-left: 3rem; /* Adjust for smaller screens */
+  #policy-timeline .timeline-item {
+    padding-left: 2rem; /* Adjust for smaller screens */
   }
 
-  .timeline-year {
+  #policy-timeline .timeline-year {
     width: 2.5rem;
     height: 2.5rem;
     font-size: 1.2rem;
   }
 
-  .timeline-content {
-    margin-left: 3.5rem;
+  #policy-timeline .timeline-content {
+    margin-left: 3rem;
   }
 }
 
@@ -826,9 +820,10 @@ body {
   }
 }
 
-.timeline-year {
+#policy-timeline .timeline-year {
   animation: bounce 2s infinite;
 }
+
 
 
         </style>
@@ -1235,6 +1230,7 @@ body {
             <img src="{% static 'svg/whatsapp.svg' %}" alt="WhatsApp Us">
         </a>
     </div><br></br>
+    <hr>
 
    <!-- Our services at a glance-->
 <section id="our-services">
@@ -1315,7 +1311,6 @@ body {
         </div>
     </div>
 </section>
-
 <!-- Policy Timeline Section -->
 <section id="policy-timeline" class="my-5">
     <div class="container">
@@ -1375,7 +1370,6 @@ body {
         </div>
     </div>
 </section>
-
 
 
     <!-- Contact-->
