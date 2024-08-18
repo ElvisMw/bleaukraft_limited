@@ -841,6 +841,39 @@
   animation: bounce 7s infinite;
 }
 
+#testimonials {
+    background-color: #f9f9f9;
+}
+
+.testimonial {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial p.lead {
+    font-style: italic;
+    color: #333;
+}
+
+.testimonial h5 {
+    color: #007bff;
+    margin-top: 15px;
+    font-weight: 700;
+}
+
+.testimonial .text-muted {
+    font-size: 0.9em;
+    color: #6c757d !important;
+}
+
+
 </style>
 </head>
 <body>
@@ -1248,84 +1281,96 @@
     <hr>
 
    <!-- Our services at a glance-->
-<section id="our-services">
+<section id="our-services" class="py-5">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
+        <div class="row text-center mb-4">
+            <div class="col-lg-12">
                 <h2 class="section-heading text-uppercase">Our Services</h2>
             </div>
         </div>
-        </div>
-        <div class="row text-center">
+        <div class="row">
             <!-- Service 1 -->
             <div class="col-md-4 mb-4">
-                <div class="service-box service-bg" style="background-image: url('{% static 'images/wall_branding7.jpg' %}');">
-                    <span class="fa-stack fa-3x icon-hover">
-                        <i class="fas fa-circle fa-stack-2x text-dark"></i>
-                        <i class="fas fa-home fa-stack-1x fa-inverse text-black"></i>
-                    </span>
-                    <h4 class="service-heading mt-3 heading-hover">Interior Branding</h4>
-                    <p class="text-muted">Transform your interior spaces with customized branding solutions that reflect your brand identity and enhance your environment.</p>
+                <div class="card h-100">
+                    <img src="{% static 'images/wall_branding7.jpg' %}" class="card-img-top" alt="Interior Branding">
+                    <div class="card-body">
+                        <h4 class="card-title">Interior Branding</h4>
+                        <p class="card-text">Transform your interior spaces with customized branding solutions that reflect your brand identity and enhance your environment.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
                 </div>
             </div>
             <!-- Service 2 -->
             <div class="col-md-4 mb-4">
-                <div class="service-box service-bg" style="background-image: url('{% static 'images/promotional_items3.jpg' %}');">
-                    <span class="fa-stack fa-3x icon-hover">
-                        <i class="fas fa-circle fa-stack-2x text-dark"></i>
-                        <i class="fas fa-building fa-stack-1x fa-inverse text-black"></i>
-                    </span>
-                    <h4 class="service-heading mt-3 heading-hover">Office Branding</h4>
-                    <p class="text-muted">Create a professional and cohesive look in your office with our comprehensive branding services, tailored to your business needs.</p>
+                <div class="card h-100">
+                    <img src="{% static 'images/promotional_items3.jpg' %}" class="card-img-top" alt="Office Branding">
+                    <div class="card-body">
+                        <h4 class="card-title">Office Branding</h4>
+                        <p class="card-text">Create a professional and cohesive look in your office with our comprehensive branding services, tailored to your business needs.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
                 </div>
             </div>
             <!-- Service 3 -->
             <div class="col-md-4 mb-4">
-                <div class="service-box service-bg" style="background-image: url('{% static 'images/hero8.jpg' %}');">
-                    <span class="fa-stack fa-3x icon-hover">
-                        <i class="fas fa-circle fa-stack-2x text-dark"></i>
-                        <i class="fas fa-gift fa-stack-1x fa-inverse text-black"></i>
-                    </span>
-                    <h4 class="service-heading mt-3 heading-hover">Promotional Items Branding</h4>
-                    <p class="text-muted">Boost your brand visibility with customized promotional items that leave a lasting impression on your target audience.</p>
+                <div class="card h-100">
+                    <img src="{% static 'images/hero8.jpg' %}" class="card-img-top" alt="Promotional Items Branding">
+                    <div class="card-body">
+                        <h4 class="card-title">Promotional Items Branding</h4>
+                        <p class="card-text">Boost your brand visibility with customized promotional items that leave a lasting impression on your target audience.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
                 </div>
             </div>
             <!-- Service 4 -->
             <div class="col-md-4 mb-4">
-                <div class="service-box service-bg" style="background-image: url('{% static 'images/hero9.jpg' %}');">
-                    <span class="fa-stack fa-3x icon-hover">
-                        <i class="fas fa-circle fa-stack-2x text-dark"></i>
-                        <i class="fas fa-print fa-stack-1x fa-inverse text-black"></i>
-                    </span>
-                    <h4 class="service-heading mt-3 heading-hover">Print Media</h4>
-                    <p class="text-muted">High-quality print media services, from business cards to brochures, ensuring your brand stands out in every print material.</p>
+                <div class="card h-100">
+                    <img src="{% static 'images/hero9.jpg' %}" class="card-img-top" alt="Print Media">
+                    <div class="card-body">
+                        <h4 class="card-title">Print Media</h4>
+                        <p class="card-text">High-quality print media services, from business cards to brochures, ensuring your brand stands out in every print material.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
                 </div>
             </div>
             <!-- Service 5 -->
             <div class="col-md-4 mb-4">
-                <div class="service-box service-bg" style="background-image: url('{% static 'images/heor7.jpg' %}');">
-                    <span class="fa-stack fa-3x icon-hover">
-                        <i class="fas fa-circle fa-stack-2x text-dark"></i>
-                        <i class="fas fa-bullhorn fa-stack-1x fa-inverse text-black"></i>
-                    </span>
-                    <h4 class="service-heading mt-3 heading-hover">Digital Marketing</h4>
-                    <p class="text-muted">Expand your online presence and engage with your audience through our strategic digital marketing services.</p>
+                <div class="card h-100">
+                    <img src="{% static 'images/heor7.jpg' %}" class="card-img-top" alt="Digital Marketing">
+                    <div class="card-body">
+                        <h4 class="card-title">Digital Marketing</h4>
+                        <p class="card-text">Expand your online presence and engage with your audience through our strategic digital marketing services.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
                 </div>
             </div>
             <!-- Service 6 -->
             <div class="col-md-4 mb-4">
-                <div class="service-box service-bg" style="background-image: url('{% static 'images/hero7.jpg' %}');">
-                    <span class="fa-stack fa-3x icon-hover">
-                        <i class="fas fa-circle fa-stack-2x text-dark"></i>
-                        <i class="fas fa-paint-brush fa-stack-1x fa-inverse text-black"></i>
-                    </span>
-                    <h4 class="service-heading mt-3 heading-hover">Graphic Design</h4>
-                    <p class="text-muted">Creative and professional graphic design services that bring your ideas to life and effectively communicate your message.</p>
+                <div class="card h-100">
+                    <img src="{% static 'images/hero7.jpg' %}" class="card-img-top" alt="Graphic Design">
+                    <div class="card-body">
+                        <h4 class="card-title">Graphic Design</h4>
+                        <p class="card-text">Creative and professional graphic design services that bring your ideas to life and effectively communicate your message.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 <!-- Policy Timeline Section -->
 <section id="policy-timeline" class="my-5">
     <div class="container">
@@ -1381,6 +1426,44 @@
                 <!-- Button positioned at the bottom -->
                 <div class="text-center">
                     <a href="#learn-more" class="btn btn-primary btn-learn-more">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-5">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <h2 class="section-heading text-uppercase">Testimonials</h2>
+                <p class="text-muted mb-5">See what our clients have to say about us</p>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Testimonial 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="testimonial p-4 shadow-sm">
+                    <p class="lead">"This company transformed our office space with their incredible branding solutions. Our clients are always impressed!"</p>
+                    <h5 class="mt-4">Jane Doe</h5>
+                    <p class="text-muted">Marketing Manager, ABC Corp.</p>
+                </div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="testimonial p-4 shadow-sm">
+                    <p class="lead">"The promotional items they provided were a huge hit at our event. Our brand visibility has skyrocketed!"</p>
+                    <h5 class="mt-4">John Smith</h5>
+                    <p class="text-muted">CEO, XYZ Enterprises</p>
+                </div>
+            </div>
+            <!-- Testimonial 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="testimonial p-4 shadow-sm">
+                    <p class="lead">"Their graphic design services are top-notch. The designs they created for us exceeded our expectations."</p>
+                    <h5 class="mt-4">Emily Johnson</h5>
+                    <p class="text-muted">Creative Director, Creative Studio</p>
                 </div>
             </div>
         </div>
