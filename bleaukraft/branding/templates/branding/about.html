@@ -2,22 +2,55 @@
 {% load static %}
 {% block content %}
 <style>
-    /* Hero Section */
-.hero-section {
-    background: url('{% static 'images/hero-background.jpg' %}') no-repeat center center;
-    background-size: cover;
-    color: #fff;
-    padding: 80px 0;
-}
+    /* Video Background Styles */
+    .video-background-container {
+        position: relative;
+        width: 100%;
+        height: 100vh; /* Adjust height as needed */
+        overflow: hidden;
+    }
 
-.hero-section h1 {
-    font-size: 3rem;
-    font-weight: bold;
-}
+    .video-background {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
 
-.hero-section p.lead {
-    font-size: 1.25rem;
-}
+    .video-overlay {
+        position: absolute;
+        bottom: 20px; /* Move to the bottom of the video */
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        text-align: center;
+        z-index: 2;
+        background-color: rgba(0, 0, 0, 0.5); /* Optional: Adds a semi-transparent background for better readability */
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .video-overlay h1 {
+        font-size: 2.5rem; /* Adjust font size as needed */
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .video-overlay p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    .video-overlay .btn {
+        font-size: 1rem;
+        padding: 10px 30px;
+        border-radius: 50px;
+    }
+
 
 /* About Section */
 .about-section h2 {
@@ -29,30 +62,42 @@
     font-size: 1rem;
     line-height: 1.6;
 }
+.about-section .col-lg-4 {
+    border: 2px solid #007bff; /* Primary blue border */
+    border-radius: 15px; /* Curved edges */
+    padding: 20px; /* Padding inside the border */
+    background-color: white; /* Ensure the background is white */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for depth */
+    transition: transform 0.3s ease-in-out; /* Optional: Smooth hover effect */
+}
 
-/* Team Section */
+.about-section .col-lg-4 h3 {
+    color: #007bff; /* Primary blue color for the headings */
+}
+
+.about-section .col-lg-4:hover {
+    transform: scale(1.05); /* Optional: Slightly enlarges on hover */
+}
+
+/* Team Section Styles */
 .team-section .card {
-    border-radius: 10px;
+    border: 2px solid #007bff; /* Primary blue border */
+    border-radius: 15px; /* Curved edges */
+    overflow: hidden;
 }
 
 .team-section .card-img-top {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.team-section .card-body {
-    padding: 20px;
+    border-bottom: 2px solid #007bff; /* Blue border below the image */
 }
 
 .team-section .card-title {
-    font-size: 1.25rem;
-    font-weight: bold;
+    color: #007bff; /* Primary blue color for the name */
 }
 
 .team-section .card-text {
-    font-size: 1rem;
-    color: #6c757d;
+    font-style: italic; /* Optional: Adds emphasis to the CEO's comment */
 }
+
 
 /* CTA Section */
 .cta-section {
@@ -78,73 +123,120 @@
     color: #007bff;
 }
 </style>
-<!-- Hero Section -->
-<section class="hero-section bg-light py-5">
-    <div class="container text-center">
-        <h1 class="display-4">About Us</h1>
-        <p class="lead">Discover the story behind Bleaukraft Limited and how we turn creative ideas into impactful branding solutions.</p>
-    </div>
-</section>
 
-<!-- Company Overview Section -->
-<section class="about-section py-5">
+<!-- Video Background Section -->
+<div class="video-background-container">
+    <video autoplay muted loop playsinline class="video-background">
+        <source src="{% static 'video/video2.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay">
+        <h1>Welcome to Bleaukraft Limited</h1>
+        <p>Innovative Branding & Creative Solutions</p>
+        <a href="#our-services" class="btn btn-primary btn-lg">Discover More</a>
+    </div>
+</div>
+
+<!-- Our Mission Section -->
+<section class="about-section bg-light py-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                <h2>Our Story</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut turpis nec orci dictum malesuada. Nullam varius quam nec nisi fermentum, non condimentum odio laoreet. Quisque cursus dui at massa tincidunt, in scelerisque libero malesuada.</p>
-                <p>Phasellus vitae dolor non lectus interdum vehicula at eget est. Sed auctor risus sit amet tincidunt efficitur. Vestibulum fermentum mi et ex gravida, sit amet gravida est pharetra.</p>
-            </div>
-            <div class="col-md-6">
+            <div class="col-lg-6 mb-4">
                 <h2>Our Mission</h2>
-                <p>Our mission is to provide innovative branding solutions that help our clients stand out in a crowded market. We believe in the power of creativity and strategy to drive business success and build lasting relationships.</p>
-                <p>We are committed to delivering exceptional service and results, and we constantly strive to exceed expectations through dedication, passion, and expertise.</p>
+                <p>At Bleaukraft Limited, our mission is to empower brands through innovative and strategic solutions. We believe in creativity as a tool for change and aim to bring fresh perspectives to every project.</p>
+            </div>
+            <div class="col-lg-6">
+                <img src="{% static 'images/market3.jfif' %}" alt="Our Mission" class="img-fluid rounded">
             </div>
         </div>
     </div>
 </section>
 
-<!-- Meet the Team Section -->
-<section class="team-section py-5 bg-light">
+<!-- Our Vision Section -->
+<section class="services-section py-5">
     <div class="container">
-        <h2 class="text-center mb-4">Meet Our Team</h2>
         <div class="row">
-            <!-- Team Member 1 -->
-            <div class="col-md-4 mb-4">
-                <div class="card border-0 shadow-sm">
-                    <img src="{% static 'images/team/member1.jpg' %}" class="card-img-top" alt="Team Member 1">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">John Doe</h5>
-                        <p class="card-text">Founder & CEO</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac ligula ligula. Aenean sed odio eu tortor tristique malesuada.</p>
-                    </div>
+            <div class="col-lg-6 order-lg-2 mb-4">
+                <h2>Our Vision</h2>
+                <p>We envision a world where every brand has a voice that is heard and a story that is told. Our goal is to become a leading provider of creative branding solutions, known for our innovation, quality, and excellence.</p>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <img src="{% static 'images/mugs_branding4.jpg' %}" alt="Our Vision" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our Values Section -->
+<section class="about-section bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <h3>Innovation</h3>
+                <p>We stay ahead of trends, pushing the boundaries of what’s possible to deliver cutting-edge solutions.</p>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <h3>Integrity</h3>
+                <p>We conduct our business with honesty, transparency, and respect, building long-lasting relationships with our clients.</p>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <h3>Excellence</h3>
+                <p>We are committed to delivering high-quality results that exceed expectations, ensuring client satisfaction every time.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="services-section py-5">
+    <div class="container">
+        <h2 class="text-center">Why Choose Bleaukraft Limited?</h2>
+        <p class="text-center mb-5">Here’s why we stand out in the branding industry.</p>
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="service-box text-center">
+                    <i class="fas fa-lightbulb fa-2x text-primary mb-3"></i>
+                    <h4>Creative Solutions</h4>
+                    <p>We deliver unique and tailored branding strategies that set you apart from the competition.</p>
                 </div>
             </div>
-            <!-- Team Member 2 -->
-            <div class="col-md-4 mb-4">
-                <div class="card border-0 shadow-sm">
-                    <img src="{% static 'images/team/member2.jpg' %}" class="card-img-top" alt="Team Member 2">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Jane Smith</h5>
-                        <p class="card-text">Creative Director</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac ligula ligula. Aenean sed odio eu tortor tristique malesuada.</p>
-                    </div>
+            <div class="col-lg-4 mb-4">
+                <div class="service-box text-center">
+                    <i class="fas fa-users fa-2x text-primary mb-3"></i>
+                    <h4>Client-Centered Approach</h4>
+                    <p>We prioritize your vision and needs, working closely with you to bring your ideas to life.</p>
                 </div>
             </div>
-            <!-- Team Member 3 -->
-            <div class="col-md-4 mb-4">
-                <div class="card border-0 shadow-sm">
-                    <img src="{% static 'images/team/member3.jpg' %}" class="card-img-top" alt="Team Member 3">
+            <div class="col-lg-4 mb-4">
+                <div class="service-box text-center">
+                    <i class="fas fa-award fa-2x text-primary mb-3"></i>
+                    <h4>Proven Expertise</h4>
+                    <p>With years of experience and a portfolio of successful projects, we are your trusted branding partner.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our Team Section -->
+<section class="team-section bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Meet Our CEO</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6 d-flex justify-content-center mb-4">
+                <div class="card shadow-sm border-primary rounded">
+                    <img src="{% static 'images/hero8.jpg' %}" class="card-img-top rounded-circle" alt="CEO" style="width: 150px; height: 150px; object-fit: cover; margin: 20px auto;">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Emily Johnson</h5>
-                        <p class="card-text">Marketing Manager</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac ligula ligula. Aenean sed odio eu tortor tristique malesuada.</p>
+                        <h4 class="card-title">James Maina</h4>
+                        <h5 class="card-subtitle mb-2 text-muted">Company CEO</h5>
+                        <p class="card-text">"At Bleaukraft Limited, we are dedicated to pushing the boundaries of innovation and excellence. Our team is committed to delivering exceptional branding solutions tailored to your needs. Together, we shape the future of creative branding."</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 
 <!-- Call to Action Section -->
 <section class="cta-section bg-primary text-white text-center py-5">
