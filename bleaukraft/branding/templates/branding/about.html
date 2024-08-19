@@ -1,3 +1,101 @@
-<!-- About Html-->
- {% extends 'branding/base_template.html' %}
- About
+{% extends 'branding/base_template.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .footer {
+        background-color: #333;
+        color: white;
+    }
+
+    .footer a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .footer a:hover {
+        text-decoration: underline;
+    }
+
+    .footer-logo img {
+        max-width: 120px; /* Adjust as needed */
+        height: auto;
+    }
+
+    .social-media a {
+        font-size: 1.5rem; /* Adjust icon size */
+        transition: color 0.3s;
+    }
+
+    .social-media a:hover {
+        color: #ddd; /* Light color on hover */
+    }
+
+    .contact-info p {
+        margin: 0;
+        font-size: 0.9rem; /* Slightly smaller text for contact info */
+    }
+</style>
+<!-- About Page -->
+<section class="about-section bg-light py-5">
+    <div class="container">
+        <!-- Introduction -->
+        <div class="row mb-5">
+            <div class="col-lg-6">
+                <h2 class="display-4">About Us</h2>
+                <p class="lead">Welcome to our company. We are dedicated to delivering the best services and products to our customers. Our team is passionate about what we do and committed to excellence.</p>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center">
+                <img src="{% static 'images/about-us.jpg' %}" alt="About Us" class="img-fluid rounded shadow-sm">
+            </div>
+        </div>
+
+        <!-- Mission Statement -->
+        <div class="row mb-5">
+            <div class="col-lg-12 text-center">
+                <h3 class="display-4">Our Mission</h3>
+                <p class="lead">Our mission is to innovate and provide outstanding solutions that meet our clients' needs. We strive for excellence in every project and work towards creating lasting positive impacts in our industry.</p>
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <div class="row mb-5">
+            <div class="col-12 text-center mb-4">
+                <h3 class="display-4">Meet the Team</h3>
+            </div>
+            <!-- Team Member 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="team-member">
+                    <img src="{% static 'images/team-member1.jpg' %}" alt="Team Member 1" class="img-fluid rounded-circle mb-3">
+                    <h4>Jane Doe</h4>
+                    <p>CEO & Founder</p>
+                </div>
+            </div>
+            <!-- Team Member 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="team-member">
+                    <img src="{% static 'images/team-member2.jpg' %}" alt="Team Member 2" class="img-fluid rounded-circle mb-3">
+                    <h4>John Smith</h4>
+                    <p>Chief Technology Officer</p>
+                </div>
+            </div>
+            <!-- Team Member 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="team-member">
+                    <img src="{% static 'images/team-member3.jpg' %}" alt="Team Member 3" class="img-fluid rounded-circle mb-3">
+                    <h4>Emily Johnson</h4>
+                    <p>Marketing Director</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="row text-center">
+            <div class="col-12">
+                <h3 class="display-4">Get in Touch</h3>
+                <p class="lead">Have any questions or want to learn more about us? Feel free to reach out to us through our contact form.</p>
+                <a href="{% url 'contact' %}" class="btn btn-primary btn-lg">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
