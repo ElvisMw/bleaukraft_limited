@@ -1103,6 +1103,60 @@ body {
         z-index: 2;
     }
 
+    /* Footer Styling */
+    .footer {
+        background-color: #1a1a1a; /* Darker background for a sleek look */
+        color: #fff;
+    }
+
+    .footer a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .footer a:hover {
+        color: #ddd;
+        text-decoration: underline;
+    }
+
+    .footer-logo img {
+        max-width: 150px; /* Adjust logo size */
+        height: auto;
+    }
+
+    .btn-outline-light {
+        border: 1px solid #fff;
+        color: #fff;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .btn-outline-light:hover {
+        background-color: #fff;
+        color: #1a1a1a;
+    }
+
+    .btn-icon {
+        font-size: 1.5rem; /* Adjust icon size */
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%; /* Circle buttons */
+        padding: 0;
+    }
+
+    .btn-icon:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* Light hover effect */
+    }
+
+    .contact-info p {
+        margin: 0;
+        font-size: 0.9rem; /* Slightly smaller text for contact info */
+    }
+
+
+
 </style>
 </head>
 <body>
@@ -1709,7 +1763,7 @@ body {
             <!-- Left Column with Text -->
             <div class="col-md-6 d-flex align-items-center">
                 <div>
-                    <h2 class="mb-4 text-white">We want to hear from you!</h2>
+                    <h2 class="mb-4 text-white">Hit us up! We want to hear from you!</h2>
                     <p class="lead text-white">Interested in our services? Would you like us to contact you? Please submit this form and we'll get back to you right away.</p>
                 </div>
             </div>
@@ -1740,20 +1794,41 @@ body {
 </div>
 
 
-
-
-
-
-
-
-    <!-- Footer-->
-    <footer class="footer py-4">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-4 text-lg-start">Copyright &copy; SAKIM ASSOCIATES 2023</div>
+<!-- Footer -->
+<footer class="footer bg-primary text-white pt-5 pb-3">
+    <div class="container">
+        <div class="row mb-4">
+            <!-- Logo Column -->
+            <div class="col-md-4 mb-3 mb-md-0 d-flex justify-content-center justify-content-md-start">
+                <a href="/" class="text-white">
+                    <img src="{% static 'logo/logo_copy.jpg' %}" alt="Logo" class="img-fluid" style="max-width: 150px; height: auto;">
+                </a>
+            </div>
+            <!-- Social Media Buttons -->
+            <div class="col-md-4 mb-3 mb-md-0 d-flex justify-content-center">
+                <a href="https://facebook.com/yourpage" target="_blank" class="btn btn-outline-light btn-icon mx-2" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/yourprofile" target="_blank" class="btn btn-outline-light btn-icon mx-2" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com/company/yourcompany" target="_blank" class="btn btn-outline-light btn-icon mx-2" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://instagram.com/yourprofile" target="_blank" class="btn btn-outline-light btn-icon mx-2" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <!-- Contact Info and Links -->
+            <div class="col-md-4 d-flex flex-column align-items-md-end">
+                <div>
+                    <a href="#privacy-policy" class="btn btn-outline-light d-block mb-2">Privacy Policy</a>
+                    <a href="#terms-of-service" class="btn btn-outline-light d-block">Terms of Service</a>
+                </div>
             </div>
         </div>
-    </footer>
+        <div class="text-center mt-4">
+            <p class="mb-0">&copy; 2024 Your Company. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Font Awesome Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
 
          <!-- JavaScript for Sticky Contact Buttons -->
          <script>
