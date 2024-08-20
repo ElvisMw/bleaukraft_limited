@@ -6,29 +6,49 @@
 <!-- Custom CSS -->
 <style>
     /* Welcome Section */
-    .welcome-section {
-        background-color: #f8f9fa;
-        padding: 60px 0;
-        text-align: center;
-    }
+.welcome-section {
+    padding: 100px 0;
+    background-color: #f8f9fa;
+}
 
-    .welcome-section h1 {
-        font-size: 2.5rem;
-        font-weight: bold;
-        margin-bottom: 20px;
-    }
+.welcome-section .display-4 {
+    font-weight: bold;
+    font-size: 2rem; /* Increase font size for better visibility */
+    margin-bottom: 15px;
+    color: #000; /* Ensure text color is visible against the background */
+}
 
-    .welcome-section p {
-        font-size: 1.25rem;
-        color: #555;
-        margin-bottom: 30px;
-    }
+.welcome-section .lead {
+    margin-bottom: 20px;
+    font-size: 1.25rem;
+    color: #333; /* Ensure good contrast */
+}
 
-    .welcome-section .btn {
-        font-size: 1.1rem;
-        padding: 12px 30px;
-        border-radius: 25px;
+.welcome-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.welcome-section .display-4 {
+    animation: pulseShadow 2s infinite;
+}
+
+@keyframes pulseShadow {
+    0%, 100% {
+        text-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
     }
+    50% {
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+}
+/* Set a higher z-index for the welcome section */
+.welcome-section {
+    position: relative; /* Ensure the element is positioned to apply z-index */
+    z-index: 1029.9;      /* Set a higher z-index value */
+}
 
     /* General Styles */
     .services-page .service-item {
@@ -106,63 +126,94 @@
 }
 
 
-    /* Our Process Section */
-    .our-process {
-        padding: 60px 0;
-    }
+/* Our Process Section */
+.our-process {
+    padding: 60px 0;
+    background-color: #f8f9fa; /* Light background for contrast */
+}
 
-    .process-step {
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 20px;
-        transition: transform 0.3s ease;
-    }
+.process-step {
+    border: 2px solid #007bff; /* Blue border */
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added shadow transition */
+    margin: 10px; /* Margin around each process step */
+    background-color: #fff; /* White background for the steps */
+}
 
-    .process-step:hover {
-        transform: scale(1.05);
-    }
+.process-step:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Shadow on hover for effect */
+}
 
-    /* Portfolio Section */
-    .portfolio {
-        padding: 60px 0;
-    }
+.our-process .text-center {
+    margin-bottom: 40px; /* Space between title and steps */
+}
 
-    .portfolio-item {
-        position: relative;
-        overflow: hidden;
-        border-radius: 8px;
-    }
+.our-process h2 {
+    font-size: 2.5rem; /* Adjusted font size for prominence */
+    margin-bottom: 20px; /* Space below the heading */
+}
 
-    .portfolio-item img {
-        transition: transform 0.3s ease;
-    }
+.our-process p.lead {
+    font-size: 1.125rem; /* Slightly larger font size for lead text */
+    line-height: 1.6; /* Improved line spacing */
+}
 
-    .portfolio-item:hover img {
-        transform: scale(1.1);
-    }
 
-    .portfolio-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.6);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
+/* Portfolio Section */
+.portfolio {
+    padding: 60px 0;
+    background-color: #f8f9fa; /* Light background for contrast */
+}
 
-    .portfolio-item:hover .portfolio-overlay {
-        opacity: 1;
-    }
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    height: 300px; /* Set a fixed height for all portfolio items */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff; /* White background for portfolio items */
+}
 
-    .portfolio-overlay h4, .portfolio-overlay p {
-        color: #fff;
-    }
+.portfolio-item img {
+    width: 100%; /* Make the image cover the container */
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-overlay h4, .portfolio-overlay p {
+    color: #fff;
+    text-align: center; /* Center-align text */
+    margin: 0; /* Remove default margins */
+}
+
 
     /* FAQ Section */
     .faq {
@@ -185,16 +236,77 @@
         margin-top: 0;
     }
 
+    /* Footer Styling */
+    .footer {
+        background-color: #1a1a1a; /* Darker background for a sleek look */
+        color: #fff;
+    }
+
+    .footer a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .footer a:hover {
+        color: #ddd;
+        text-decoration: underline;
+    }
+
+    .footer-logo img {
+        max-width: 150px; /* Adjust logo size */
+        height: auto;
+    }
+
+    .btn-outline-light {
+        border: 1px solid #fff;
+        color: #fff;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .btn-outline-light:hover {
+        background-color: #fff;
+        color: #1a1a1a;
+    }
+
+    .btn-icon {
+        font-size: 1.5rem; /* Adjust icon size */
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%; /* Circle buttons */
+        padding: 0;
+    }
+
+    .btn-icon:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* Light hover effect */
+    }
+
+    .contact-info p {
+        margin: 0;
+        font-size: 0.9rem; /* Slightly smaller text for contact info */
+    }
+
+
 
 </style>
 <!-- Welcome Section -->
 <section class="welcome-section">
     <div class="container">
-        <h1 class="display-4">Welcome to Our Branding Solutions</h1>
-        <p class="lead">We specialize in transforming your brand's identity through innovative and creative solutions tailored to your needs.</p>
-        <a href="#services-list" class="btn btn-primary">Discover Our Services</a>
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h2 class="display-4">Welcome to Our Branding Solutions</h2>
+                <p class="lead">We specialize in transforming your brand's identity through innovative and creative solutions tailored to your needs.</p>
+                <a href="#services-list" class="btn btn-primary">Discover Our Services</a>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="{% static 'images/office_branding1.jpg' %}" alt="Office Branding" class="img-fluid rounded">
+            </div>
+        </div>
     </div>
 </section>
+
 
 <!-- Services Page -->
 <section class="services-page">
@@ -454,50 +566,50 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section class="portfolio">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="font-weight-bold">Our Portfolio</h2>
-                <p class="lead">Explore our recent branding projects and see how we’ve transformed our clients’ brands.</p>
-            </div>
-            <div class="row">
-
-                <!-- Portfolio Item 1 -->
-                <div class="col-md-4 mb-4">
-                    <div class="portfolio-item">
-                        <img src="{% static 'images/portfolio1.jpg' %}" alt="Portfolio Item 1" class="img-fluid">
-                        <div class="portfolio-overlay text-center">
-                            <h4 class="font-weight-bold">Project 1</h4>
-                            <p>Brief description of the project and its impact on the client's brand.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 2 -->
-                <div class="col-md-4 mb-4">
-                    <div class="portfolio-item">
-                        <img src="{% static 'images/portfolio2.jpg' %}" alt="Portfolio Item 2" class="img-fluid">
-                        <div class="portfolio-overlay text-center">
-                            <h4 class="font-weight-bold">Project 2</h4>
-                            <p>Brief description of the project and its impact on the client's brand.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 3 -->
-                <div class="col-md-4 mb-4">
-                    <div class="portfolio-item">
-                        <img src="{% static 'images/portfolio3.jpg' %}" alt="Portfolio Item 3" class="img-fluid">
-                        <div class="portfolio-overlay text-center">
-                            <h4 class="font-weight-bold">Project 3</h4>
-                            <p>Brief description of the project and its impact on the client's brand.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+<section class="portfolio">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="font-weight-bold">Our Portfolio</h2>
+            <p class="lead">Explore our recent branding projects and see how we’ve transformed our clients’ brands. Each project demonstrates our commitment to quality and creativity.</p>
         </div>
-    </section>
+        <div class="row">
+
+            <!-- Portfolio Item 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="portfolio-item">
+                    <img src="{% static 'images/market3.jfif' %}" alt="Market Branding Project">
+                    <div class="portfolio-overlay text-center">
+                        <h4 class="font-weight-bold">Market Branding Project</h4>
+                        <p>Revamped the visual identity for a major market chain, increasing customer engagement and brand recognition through innovative design and strategic placement.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio Item 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="portfolio-item">
+                    <img src="{% static 'images/shop_branding1.JPG' %}" alt="Shop Branding Project">
+                    <div class="portfolio-overlay text-center">
+                        <h4 class="font-weight-bold">Shop Branding Project</h4>
+                        <p>Designed a cohesive branding strategy for a retail shop, enhancing its market presence and attracting new customers with eye-catching graphics and effective branding materials.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio Item 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="portfolio-item">
+                    <img src="{% static 'images/vehicle_branding2.JPG' %}" alt="Vehicle Branding Project">
+                    <div class="portfolio-overlay text-center">
+                        <h4 class="font-weight-bold">Vehicle Branding Project</h4>
+                        <p>Created dynamic vehicle wraps for a fleet, ensuring high visibility and impactful advertising on the go, driving brand awareness and enhancing public perception.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
     <!-- FAQ Section -->
     <section class="faq">
@@ -543,6 +655,38 @@
             </div>
         </div>
     </section>
+
+
+<!-- Footer -->
+<footer class="footer bg-primary text-white pt-5 pb-3">
+    <div class="container">
+        <div class="row mb-4">
+            <!-- Logo Column -->
+            <div class="col-md-4 mb-3 mb-md-0 d-flex justify-content-center justify-content-md-start">
+                <a href="/" class="text-white">
+                    <img src="{% static 'logo/logo_copy.jpg' %}" alt="Logo" class="img-fluid" style="max-width: 150px; height: auto;">
+                </a>
+            </div>
+            <!-- Social Media Buttons -->
+            <div class="col-md-4 mb-3 mb-md-0 d-flex justify-content-center">
+                <a href="https://facebook.com/yourpage" target="_blank" class="btn btn-outline-light btn-icon mx-2" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/yourprofile" target="_blank" class="btn btn-outline-light btn-icon mx-2" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com/company/yourcompany" target="_blank" class="btn btn-outline-light btn-icon mx-2" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://instagram.com/yourprofile" target="_blank" class="btn btn-outline-light btn-icon mx-2" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <!-- Contact Info and Links -->
+            <div class="col-md-4 d-flex flex-column align-items-md-end">
+                <div>
+                    <a href="#privacy-policy" class="btn btn-outline-light d-block mb-2">Privacy Policy</a>
+                    <a href="#terms-of-service" class="btn btn-outline-light d-block">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <p class="mb-0">&copy; 2024 Your Company. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
 
 </section>
 

@@ -14,9 +14,3 @@ def services(request):
 
 def contact(request):
     return render(request, 'branding/contact.html')
-
-def testimonials(request):
-    return render(request, 'branding/testimonials.html')
-
-def timeline(request):
-    return render(request, 'branding/timeline.html')
