@@ -1,3 +1,403 @@
-<!-- Services Html-->
 {% extends 'branding/base_template.html' %}
- Services
+{% load static %}
+
+{% block content %}
+
+<!-- Custom CSS -->
+<style>
+    /* General Styles */
+    .services-page .service-item {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .services-page .service-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .services-page .service-item img {
+        width: 100%;
+        height: auto;
+    }
+
+    .services-page .service-item h4 {
+        margin-top: 15px;
+        font-size: 1.25rem;
+    }
+
+    .services-page .service-item p {
+        margin-top: 10px;
+        color: #555;
+    }
+
+    /* Hero Section */
+    .video-background {
+        position: relative;
+        height: 500px;
+        overflow: hidden;
+    }
+
+    .bg-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .video-overlay h1, .video-overlay p {
+        animation: fadeIn 2s ease-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    /* Why Choose Us Section */
+    .why-choose-us img {
+        animation: zoomIn 1s ease-out;
+    }
+
+    @keyframes zoomIn {
+        from { transform: scale(0.9); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+
+    /* Our Process Section */
+    .process-step {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .process-step:hover {
+        transform: scale(1.05);
+    }
+
+    /* Portfolio Section */
+    .portfolio-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+    }
+
+    .portfolio-item img {
+        transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover img {
+        transform: scale(1.1);
+    }
+
+    .portfolio-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+        opacity: 1;
+    }
+
+    .portfolio-overlay h4, .portfolio-overlay p {
+        color: #fff;
+    }
+
+    /* FAQ Section */
+    .faq-item {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 15px;
+        transition: background-color 0.3s ease;
+    }
+
+    .faq-item:hover {
+        background-color: #f8f9fa;
+    }
+
+    .faq-item h5 {
+        margin-top: 0;
+    }
+</style>
+
+<!-- Services Page -->
+<section class="services-page">
+
+    <!-- Hero Section with Video Background -->
+    <div class="video-background">
+        <video autoplay muted loop class="bg-video">
+            <source src="{% static 'videos/services_video.mp4' %}" type="video/mp4">
+        </video>
+        <div class="video-overlay d-flex align-items-center justify-content-center">
+            <div class="text-center text-white">
+                <h1 class="display-4 font-weight-bold">Our Services</h1>
+                <p class="lead">Comprehensive Branding Solutions Tailored for Your Business</p>
+                <a href="#services-list" class="btn btn-primary btn-lg mt-4">Explore Our Services</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services List Section -->
+    <section id="services-list" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="font-weight-bold">What We Offer</h2>
+                <p class="lead">From innovative branding to creative solutions, discover what we can do for you.</p>
+            </div>
+            <div class="row">
+
+                <!-- Service Item 1: Office Branding -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item text-center">
+                        <img src="{% static 'images/office_branding.jpg' %}" alt="Office Branding">
+                        <h4 class="font-weight-bold mt-3">Office Branding</h4>
+                        <p>Transform your office space with personalized branding that enhances your corporate identity and inspires your team.</p>
+                    </div>
+                </div>
+
+                <!-- Service Item 2: Stationery Branding -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item text-center">
+                        <img src="{% static 'images/stationery_branding.jpg' %}" alt="Stationery Branding">
+                        <h4 class="font-weight-bold mt-3">Stationery Branding</h4>
+                        <p>Elevate your brand with customized stationery that makes a lasting impression in every correspondence.</p>
+                    </div>
+                </div>
+
+                <!-- Service Item 3: T-Shirt Branding -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item text-center">
+                        <img src="{% static 'images/tshirt_branding.jpg' %}" alt="T-Shirt Branding">
+                        <h4 class="font-weight-bold mt-3">T-Shirt Branding</h4>
+                        <p>Create memorable branded apparel that stands out and promotes your brand wherever you go.</p>
+                    </div>
+                </div>
+
+                <!-- Service Item 4: Vehicle Branding -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item text-center">
+                        <img src="{% static 'images/vehicle_branding.jpg' %}" alt="Vehicle Branding">
+                        <h4 class="font-weight-bold mt-3">Vehicle Branding</h4>
+                        <p>Turn your vehicles into mobile advertisements with eye-catching branding that reaches a wider audience.</p>
+                    </div>
+                </div>
+
+                <!-- Service Item 5: Wall Branding -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item text-center">
+                        <img src="{% static 'images/wall_branding.jpg' %}" alt="Wall Branding">
+                        <h4 class="font-weight-bold mt-3">Wall Branding</h4>
+                        <p>Transform your wall spaces into impactful brand statements that capture attention and convey your message.</p>
+                    </div>
+                </div>
+
+                <!-- Service Item 6: Building Branding -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item text-center">
+                        <img src="{% static 'images/building_branding.jpg' %}" alt="Building Branding">
+                        <h4 class="font-weight-bold mt-3">Building Branding</h4>
+                        <p>Enhance your building's exterior with large-scale branding solutions that showcase your brand to the public.</p>
+                    </div>
+                </div>
+
+                <!-- Service Item 7: Other Branding -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item text-center">
+                        <img src="{% static 'images/other_branding.jpg' %}" alt="Other Branding">
+                        <h4 class="font-weight-bold mt-3">Other Branding</h4>
+                        <p>Explore our other customized branding services tailored to meet your unique needs and enhance your brand visibility.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us bg-primary text-white py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4">
+                    <h2 class="font-weight-bold">Why Choose Us?</h2>
+                    <p class="lead">Our dedicated team provides creative and effective branding solutions tailored to your business needs. We prioritize quality, innovation, and customer satisfaction.</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="{% static 'images/why_choose_us.jpg' %}" alt="Why Choose Us" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process Section -->
+    <section class="our-process py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="font-weight-bold">Our Process</h2>
+                <p class="lead">Follow our streamlined process to achieve exceptional branding results.</p>
+            </div>
+            <div class="row">
+
+                <!-- Process Step 1 -->
+                <div class="col-lg-4 mb-4">
+                    <div class="process-step text-center">
+                        <h4 class="font-weight-bold">Consultation</h4>
+                        <p>We begin with a comprehensive consultation to understand your needs and goals.</p>
+                    </div>
+                </div>
+
+                <!-- Process Step 2 -->
+                <div class="col-lg-4 mb-4">
+                    <div class="process-step text-center">
+                        <h4 class="font-weight-bold">Design & Planning</h4>
+                        <p>Our team crafts a tailored design and branding strategy to meet your requirements.</p>
+                    </div>
+                </div>
+
+                <!-- Process Step 3 -->
+                <div class="col-lg-4 mb-4">
+                    <div class="process-step text-center">
+                        <h4 class="font-weight-bold">Implementation</h4>
+                        <p>We execute the branding plan with precision, ensuring high-quality results.</p>
+                    </div>
+                </div>
+
+                <!-- Process Step 4 -->
+                <div class="col-lg-4 mb-4">
+                    <div class="process-step text-center">
+                        <h4 class="font-weight-bold">Review & Feedback</h4>
+                        <p>After implementation, we review the outcomes and gather feedback for continuous improvement.</p>
+                    </div>
+                </div>
+
+                <!-- Process Step 5 -->
+                <div class="col-lg-4 mb-4">
+                    <div class="process-step text-center">
+                        <h4 class="font-weight-bold">Support</h4>
+                        <p>We provide ongoing support to address any issues and ensure your branding remains effective.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="font-weight-bold">Our Work</h2>
+                <p class="lead">Check out some of our recent projects and see the quality of our work.</p>
+            </div>
+            <div class="row">
+
+                <!-- Portfolio Item 1 -->
+                <div class="col-lg-4 mb-4">
+                    <div class="portfolio-item">
+                        <img src="{% static 'images/portfolio1.jpg' %}" alt="Portfolio 1" class="img-fluid">
+                        <div class="portfolio-overlay text-center">
+                            <h4 class="font-weight-bold">Project Title 1</h4>
+                            <p>Brief description of the project highlighting key features and outcomes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 2 -->
+                <div class="col-lg-4 mb-4">
+                    <div class="portfolio-item">
+                        <img src="{% static 'images/portfolio2.jpg' %}" alt="Portfolio 2" class="img-fluid">
+                        <div class="portfolio-overlay text-center">
+                            <h4 class="font-weight-bold">Project Title 2</h4>
+                            <p>Brief description of the project highlighting key features and outcomes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 3 -->
+                <div class="col-lg-4 mb-4">
+                    <div class="portfolio-item">
+                        <img src="{% static 'images/portfolio3.jpg' %}" alt="Portfolio 3" class="img-fluid">
+                        <div class="portfolio-overlay text-center">
+                            <h4 class="font-weight-bold">Project Title 3</h4>
+                            <p>Brief description of the project highlighting key features and outcomes.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="font-weight-bold">Frequently Asked Questions</h2>
+                <p class="lead">Find answers to the most common questions about our services and process.</p>
+            </div>
+            <div class="row">
+
+                <!-- FAQ Item 1 -->
+                <div class="col-md-6 mb-4">
+                    <div class="faq-item">
+                        <h5 class="font-weight-bold">What services do you offer?</h5>
+                        <p>We offer a wide range of branding services including office branding, stationery branding, t-shirt branding, and more.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="col-md-6 mb-4">
+                    <div class="faq-item">
+                        <h5 class="font-weight-bold">How long does the branding process take?</h5>
+                        <p>The duration depends on the complexity of the project. We provide a timeline during the consultation phase.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="col-md-6 mb-4">
+                    <div class="faq-item">
+                        <h5 class="font-weight-bold">Can I request custom branding solutions?</h5>
+                        <p>Yes, we offer customized branding solutions tailored to your specific needs and preferences.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="col-md-6 mb-4">
+                    <div class="faq-item">
+                        <h5 class="font-weight-bold">What is the cost of your services?</h5>
+                        <p>Pricing varies based on the scope of the project. Contact us for a detailed quote.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</section>
+
+{% endblock %}

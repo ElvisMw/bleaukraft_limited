@@ -1,6 +1,7 @@
 {% extends 'branding/base_template.html' %}
 {% load static %}
 {% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
 <style>
     /* Video Background Styles */
     .video-background-container {
@@ -123,6 +124,118 @@
     color: #007bff;
 }
 
+/* Milestones Section Styles */
+.milestones-section {
+    position: relative;
+}
+
+.timeline {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    padding-left: 40px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #007bff; /* Primary blue color for the vertical line */
+    border-radius: 2px;
+}
+
+.timeline-year {
+    position: absolute;
+    left: -60px;
+    top: 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.timeline-content {
+    background-color: #fff;
+    border: 2px solid #007bff; /* Primary blue border */
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h4 {
+    margin-top: 0;
+    color: #007bff; /* Primary blue for the heading */
+}
+
+.timeline-content p {
+    margin-bottom: 0;
+}
+
+/* Optional: Additional CSS for smoother animations */
+.animate__animated {
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.typewriter h2 {
+    overflow: hidden;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    width: 100%;
+    animation: typing 3.5s steps(40, end);
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+p, a, li, span {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-size: 3rem; /* 48px on most browsers */
+}
+
+p {
+    font-size: 1.125rem; /* 18px */
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1rem; /* 16px */
+    }
+}
+
+.fade-in-text {
+    opacity: 0;
+    animation: fadeInText 1.5s ease-in forwards;
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 </style>
 
 <!-- Video Background Section -->
@@ -140,33 +253,44 @@
 
 <!-- Our Mission Section -->
 <section class="about-section bg-light py-5">
-    <div class="container">
+    <div class="typewriter">
         <div class="row">
+            <!-- Text Column with Blue Background and Slide-in Animation -->
             <div class="col-lg-6 mb-4">
-                <h2>Our Mission</h2>
-                <p>At Bleaukraft Limited, our mission is to empower brands through innovative and strategic solutions. We believe in creativity as a tool for change and aim to bring fresh perspectives to every project.</p>
+                <div class="p-4 bg-primary text-white rounded animate__animated animate__fadeInLeft">
+                    <h2 class="text-white">Our Mission</h2>
+                    <p>At Bleaukraft Limited, our mission is to empower brands through innovative and strategic solutions. We believe in creativity as a tool for change and aim to bring fresh perspectives to every project.</p>
+                </div>
             </div>
+            <!-- Image Column with Fade-in Animation -->
             <div class="col-lg-6">
-                <img src="{% static 'images/market3.jfif' %}" alt="Our Mission" class="img-fluid rounded">
+                <img src="{% static 'images/market3.jfif' %}" alt="Our Mission" class="img-fluid rounded animate__animated animate__fadeInRight">
             </div>
         </div>
     </div>
 </section>
 
+
+
 <!-- Our Vision Section -->
 <section class="services-section py-5">
-    <div class="container">
+    <div class="typewriter">
         <div class="row">
-            <div class="col-lg-6 order-lg-2 mb-4">
-                <h2>Our Vision</h2>
-                <p>We envision a world where every brand has a voice that is heard and a story that is told. Our goal is to become a leading provider of creative branding solutions, known for our innovation, quality, and excellence.</p>
-            </div>
+            <!-- Image Column -->
             <div class="col-lg-6 order-lg-1">
                 <img src="{% static 'images/mugs_branding4.jpg' %}" alt="Our Vision" class="img-fluid rounded">
+            </div>
+            <!-- Text Column with Blue Background -->
+            <div class="col-lg-6 order-lg-2 mb-4">
+                <div class="p-4 bg-primary text-white rounded">
+                    <h2 class="text-white">Our Vision</h2>
+                    <p>We envision a world where every brand has a voice that is heard and a story that is told. Our goal is to become a leading provider of creative branding solutions, known for our innovation, quality, and excellence.</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
 
 <!-- Our Values Section -->
 <section class="about-section bg-light py-5">
@@ -219,6 +343,44 @@
     </div>
 </section>
 
+<!-- Milestones Section -->
+<section class="milestones-section bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Our Journey</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">2015</div>
+                <div class="timeline-content">
+                    <h4>Company Founded</h4>
+                    <p>Bleaukraft Limited was established, setting the foundation for innovative branding solutions.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2017</div>
+                <div class="timeline-content">
+                    <h4>First Major Client</h4>
+                    <p>We secured our first major client, expanding our portfolio and solidifying our presence in the industry.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2019</div>
+                <div class="timeline-content">
+                    <h4>International Expansion</h4>
+                    <p>Bleaukraft Limited expanded internationally, opening offices in key global markets.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2022</div>
+                <div class="timeline-content">
+                    <h4>Award for Excellence</h4>
+                    <p>We received the prestigious Industry Excellence Award, recognizing our commitment to innovation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <!-- Our Team Section -->
 <section class="team-section bg-light py-5">
     <div class="container">
@@ -228,7 +390,7 @@
                 <div class="card shadow-sm border-primary rounded">
                     <img src="{% static 'images/hero8.jpg' %}" class="card-img-top rounded-circle" alt="CEO" style="width: 150px; height: 150px; object-fit: cover; margin: 20px auto;">
                     <div class="card-body text-center">
-                        <h4 class="card-title">James Maina</h4>
+                        <h4 class="card-title">M.K James</h4>
                         <h5 class="card-subtitle mb-2 text-muted">Company CEO</h5>
                         <p class="card-text">"At Bleaukraft Limited, we are dedicated to pushing the boundaries of innovation and excellence. Our team is committed to delivering exceptional branding solutions tailored to your needs. Together, we shape the future of creative branding."</p>
                     </div>
