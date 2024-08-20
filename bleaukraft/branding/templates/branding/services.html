@@ -5,154 +5,186 @@
 
 <!-- Custom CSS -->
 <style>
-        /* Welcome Section */
-        .welcome-section {
-            background-color: #f8f9fa;
-            padding: 60px 0;
-            text-align: center;
-        }
+    /* Welcome Section */
+    .welcome-section {
+        background-color: #f8f9fa;
+        padding: 60px 0;
+        text-align: center;
+    }
 
-        .welcome-section h1 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
+    .welcome-section h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
 
-        .welcome-section p {
-            font-size: 1.25rem;
-            color: #555;
-            margin-bottom: 30px;
-        }
+    .welcome-section p {
+        font-size: 1.25rem;
+        color: #555;
+        margin-bottom: 30px;
+    }
 
-        .welcome-section .btn {
-            font-size: 1.1rem;
-            padding: 12px 30px;
-            border-radius: 25px;
-        }
+    .welcome-section .btn {
+        font-size: 1.1rem;
+        padding: 12px 30px;
+        border-radius: 25px;
+    }
 
-        /* General Styles */
-        .services-page .service-item {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+    /* General Styles */
+    .services-page .service-item {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        .services-page .service-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
+    .services-page .service-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
 
-        .services-page .service-item img {
-            width: 100%;
-            height: auto;
-        }
+    .services-page .service-item img {
+        width: 100%;
+        height: 200px; /* Set a fixed height for all images */
+        object-fit: cover; /* Maintain aspect ratio and cover the area */
+    }
 
-        .services-page .service-item h4 {
-            margin-top: 15px;
-            font-size: 1.25rem;
-        }
+    .services-page .service-item h4 {
+        margin-top: 15px;
+        font-size: 1.25rem;
+    }
 
-        .services-page .service-item p {
-            margin-top: 10px;
-            color: #555;
-        }
+    .services-page .service-item p {
+        margin-top: 10px;
+        color: #555;
+    }
 
-        /* Why Choose Us Section */
-        .why-choose-us {
-            background-color: #007bff; /* Primary blue */
-            color: #fff;
-            padding: 60px 0;
-        }
+    /* Why Choose Us Section */
+.why-choose-us {
+    background-color: #000000;
+    color: #fff;
+    padding: 40px 0; /* Reduced padding for a smaller section */
+    text-align: center; /* Center-align content */
+}
 
-        .why-choose-us img {
-            animation: zoomIn 1s ease-out;
-        }
+.why-choose-us .container {
+    display: flex;
+    align-items: center; /* Vertically align items */
+    justify-content: center; /* Center horizontally */
+    flex-wrap: wrap; /* Wrap items if necessary */
+    text-align: left; /* Align text to the left within the flex container */
+}
 
-        @keyframes zoomIn {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
+.why-choose-us .text-content {
+    flex: 1;
+    padding: 20px; /* Padding around the text */
+}
 
-        /* Our Process Section */
-        .our-process {
-            padding: 60px 0;
-        }
+.why-choose-us .text-content h2 {
+    font-size: 2rem; /* Adjusted font size for a smaller section */
+    margin-bottom: 15px; /* Space below the heading */
+}
 
-        .process-step {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            transition: transform 0.3s ease;
-        }
+.why-choose-us .text-content p {
+    font-size: 1rem; /* Adjusted font size */
+    line-height: 1.5; /* Improved line spacing */
+    margin-bottom: 20px; /* Space below the paragraph */
+}
 
-        .process-step:hover {
-            transform: scale(1.05);
-        }
+.why-choose-us .image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Center image horizontally */
+}
 
-        /* Portfolio Section */
-        .portfolio {
-            padding: 60px 0;
-        }
+.why-choose-us .image-container img {
+    max-width: 100%; /* Ensure image fits within its container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 15px; /* Curved edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for style */
+}
 
-        .portfolio-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-        }
 
-        .portfolio-item img {
-            transition: transform 0.3s ease;
-        }
+    /* Our Process Section */
+    .our-process {
+        padding: 60px 0;
+    }
 
-        .portfolio-item:hover img {
-            transform: scale(1.1);
-        }
+    .process-step {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        transition: transform 0.3s ease;
+    }
 
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
+    .process-step:hover {
+        transform: scale(1.05);
+    }
 
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
+    /* Portfolio Section */
+    .portfolio {
+        padding: 60px 0;
+    }
 
-        .portfolio-overlay h4, .portfolio-overlay p {
-            color: #fff;
-        }
+    .portfolio-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+    }
 
-        /* FAQ Section */
-        .faq {
-            padding: 60px 0;
-        }
+    .portfolio-item img {
+        transition: transform 0.3s ease;
+    }
 
-        .faq-item {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 15px;
-            transition: background-color 0.3s ease;
-        }
+    .portfolio-item:hover img {
+        transform: scale(1.1);
+    }
 
-        .faq-item:hover {
-            background-color: #f8f9fa;
-        }
+    .portfolio-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
 
-        .faq-item h5 {
-            margin-top: 0;
-        }
+    .portfolio-item:hover .portfolio-overlay {
+        opacity: 1;
+    }
+
+    .portfolio-overlay h4, .portfolio-overlay p {
+        color: #fff;
+    }
+
+    /* FAQ Section */
+    .faq {
+        padding: 60px 0;
+    }
+
+    .faq-item {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 15px;
+        transition: background-color 0.3s ease;
+    }
+
+    .faq-item:hover {
+        background-color: #f8f9fa;
+    }
+
+    .faq-item h5 {
+        margin-top: 0;
+    }
+
 
 </style>
 <!-- Welcome Section -->
@@ -310,15 +342,6 @@
                     </div>
                 </div>
 
-                <!-- Service Item 15: Other Branding -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-item text-center">
-                        <img src="{% static 'images/hero7.jpg' %}" alt="Other Branding">
-                        <h4 class="font-weight-bold mt-3">Other Branding</h4>
-                        <p>Explore our other customized branding services tailored to meet your unique needs and enhance your brand visibility.</p>
-                    </div>
-                </div>
-
                 <!-- Service Item 16: Calendar Branding -->
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="service-item text-center">
@@ -363,18 +386,35 @@
                         <p>Explore our other customized branding services tailored to meet your unique needs and enhance your brand visibility.</p>
                     </div>
                 </div>
+
+                <!-- Service Item 15: Other Branding -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item text-center">
+                        <img src="{% static 'images/hero7.jpg' %}" alt="Other Branding">
+                        <h4 class="font-weight-bold mt-3">Other Branding</h4>
+                        <p>Explore our other customized branding services tailored to meet your unique needs and enhance your brand visibility.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section class="why-choose-us">
-        <div class="container text-center">
+<!-- Why Choose Us Section -->
+<section class="why-choose-us">
+    <div class="container">
+        <!-- Text Content -->
+        <div class="text-content">
             <h2 class="font-weight-bold">Why Choose Us?</h2>
-            <p class="lead">Discover the reasons why our clients trust us with their branding needs.</p>
-            <img src="{% static 'images/why_choose_us.jpg' %}" alt="Why Choose Us" class="img-fluid mt-4">
+            <p class="lead">Discover why our clients trust us with their branding needs. With a proven track record of excellence and innovation, we offer unparalleled service that sets us apart. Our dedicated team is committed to delivering results that exceed expectations, leveraging the latest technology and strategies to ensure your success.</p>
         </div>
-    </section>
+        <!-- Image Container -->
+        <div class="image-container">
+            <img src="{% static 'images/hero2.jpg' %}" alt="Why Choose Us" class="img-fluid mt-4">
+        </div>
+    </div>
+</section>
+
 
     <!-- Our Process Section -->
     <section class="our-process">
