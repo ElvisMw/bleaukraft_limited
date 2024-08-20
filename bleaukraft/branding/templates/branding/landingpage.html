@@ -1164,8 +1164,8 @@ body {
     <div class="contact-info contact-info-bar bg-primary text-light">
         <div class="container">
             <div class="contact-details">
-                <span><i class="fas fa-phone-alt"></i> +123-456-7890</span>
-                <span><i class="fas fa-envelope"></i> info@bleaukraft.com</span>
+                <span><i class="fas fa-phone-alt"></i> +254 728 646 757</span>
+                <span><i class="fas fa-envelope"></i> sales@bleaukraftlimited.com</span>
             </div>
             <div class="social-links">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -1254,12 +1254,9 @@ body {
                     Welcome to Bleaukraft Limited
                 </h1>
                 <h3 class="hero-subtitle font-weight-light text-secondary mb-3">
-                    Your Partner in Creative Branding Solutions
+                    Innovative Branding & Creative Solutions
                 </h3>
-                <h4 class="hero-tagline text-muted mb-5">
-                    From Concept to Completion, We've Got You Covered
-                </h4>
-                <a href="#services" class="btn btn-primary btn-lg">Explore Our Services</a>
+                <a href="{% url 'branding:services' %}" class="btn btn-primary btn-lg">Explore Our Services</a>
             </div>
         </div>
     </header>
@@ -1549,7 +1546,7 @@ body {
         <a href="tel:+254724239883" class="sticky-contact-button">
             <img src="{% static 'svg/phone_call.svg' %}" alt="Contact Us">
         </a>
-        <a href="tel:+254724239883" class="sticky-contact-button" title="Call Us">
+        <a href="tel:+254 728 646 757" class="sticky-contact-button" title="Call Us">
             <img src="{% static 'svg/phone_call.svg' %}" alt="Contact Us">
         </a>
 
@@ -1581,7 +1578,7 @@ body {
                         <p class="card-text">Transform your interior spaces with customized branding solutions that reflect your brand identity and enhance your environment.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Learn More</a>
+                        <a href="{% url 'branding:services' %}" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -1594,7 +1591,7 @@ body {
                         <p class="card-text">Create a professional and cohesive look in your office with our comprehensive branding services, tailored to your business needs.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Learn More</a>
+                        <a href="{% url 'branding:services' %}" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -1607,7 +1604,7 @@ body {
                         <p class="card-text">Boost your brand visibility with customized promotional items that leave a lasting impression on your target audience.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Learn More</a>
+                        <a href="{% url 'branding:services' %}" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -1620,7 +1617,7 @@ body {
                         <p class="card-text">High-quality print media services, from business cards to brochures, ensuring your brand stands out in every print material.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Learn More</a>
+                        <a href="{% url 'branding:services' %}" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -1633,7 +1630,7 @@ body {
                         <p class="card-text">Expand your online presence and engage with your audience through our strategic digital marketing services.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Learn More</a>
+                        <a href="{% url 'branding:services' %}" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -1646,7 +1643,7 @@ body {
                         <p class="card-text">Creative and professional graphic design services that bring your ideas to life and effectively communicate your message.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Learn More</a>
+                        <a href="{% url 'branding:services' %}" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -1705,10 +1702,6 @@ body {
                             <p class="text-muted">We are dedicated to sustainable practices that minimize environmental impact. Our policies promote responsible resource use and support our commitment to a greener future.</p>
                         </div>
                     </div>
-                </div>
-                <!-- Button positioned at the bottom -->
-                <div class="text-center">
-                    <a href="#learn-more" class="btn btn-primary btn-learn-more">Learn More</a>
                 </div>
             </div>
         </div>

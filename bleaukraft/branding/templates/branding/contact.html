@@ -1,3 +1,368 @@
-<!-- Contact-->
-{% extends 'branding/base_template.html' %}
- Contact
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <script src="https://kit.fontawesome.com/c32adfdcda.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            background-image: url(https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) !important;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        body::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 60px;
+            width: 100%;
+            z-index: 1030;
+            background-color: #f8f9fa;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .navbar-brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .navbar-brand img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        .navbar .navbar-brand .company-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar .navbar-brand .slogan {
+            font-size: 1rem;
+            color: #6c757d;
+        }
+
+        .navbar .navbar-toggler {
+            border: 0;
+        }
+
+        .navbar .navbar-toggler-icon {
+            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"%3E%3Cpath fill="none" stroke="currentColor" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/%3E%3C/svg%3E');
+        }
+
+        .navbar .nav-link {
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar .btn-outline-primary {
+            border-color: #007bff;
+            color: #007bff;
+        }
+
+        .navbar .btn-outline-primary:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .navbar .btn-outline-primary.rounded-pill {
+            border-radius: 50rem;
+        }
+
+
+        section {
+            position: relative;
+            z-index: 3;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .section-header {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            color: #FFF;
+            font-weight: bold;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .section-header p {
+            color: #FFF;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .contact-info {
+            width: 50%;
+        }
+
+        .contact-info-item {
+            display: flex;
+            margin-bottom: 30px;
+        }
+
+        .contact-info-icon {
+            height: 70px;
+            width: 70px;
+            background-color: #fff;
+            text-align: center;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-info-icon i {
+            font-size: 30px;
+            line-height: 70px;
+        }
+
+        .contact-info-content {
+            margin-left: 20px;
+        }
+
+        .contact-info-content h4 {
+            color: #1da9c0;
+            font-size: 1.4em;
+            margin-bottom: 5px;
+        }
+
+        .contact-info-content p {
+            color: #FFF;
+            font-size: 1em;
+        }
+
+        .contact-form {
+            background-color: #fff;
+            padding: 40px;
+            width: 45%;
+            padding-bottom: 20px;
+            padding-top: 20px;
+        }
+
+        .contact-form h2 {
+            font-weight: bold;
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .contact-form .input-box {
+            position: relative;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .contact-form .input-box input,
+        .contact-form .input-box textarea {
+            width: 100%;
+            padding: 5px 0;
+            font-size: 16px;
+            margin: 10px 0;
+            border: none;
+            border-bottom: 2px solid #333;
+            outline: none;
+            resize: none;
+        }
+
+        .contact-form .input-box span {
+            position: absolute;
+            left: 0;
+            padding: 5px 0;
+            font-size: 16px;
+            margin: 10px 0;
+            pointer-events: none;
+            transition: 0.5s;
+            color: #666;
+        }
+
+        .contact-form .input-box input:focus ~ span,
+        .contact-form .input-box textarea:focus ~ span {
+            color: #e91e63;
+            font-size: 12px;
+            transform: translateY(-20px);
+        }
+
+        .contact-form .input-box input[type="submit"] {
+            width: 100%;
+            background: #00bcd4;
+            color: #FFF;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 18px;
+            border: 1px solid #00bcd4;
+            transition: 0.5s;
+        }
+
+        .contact-form .input-box input[type="submit"]:hover {
+            background: #FFF;
+            color: #00bcd4;
+        }
+
+        @media (max-width: 991px) {
+            section {
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+
+            .row {
+                flex-direction: column;
+            }
+
+            .contact-info {
+                margin-bottom: 40px;
+                width: 100%;
+            }
+
+            .contact-form {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!--- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <a class="navbar-brand d-flex align-items-center" href="{% url 'branding:home' %}">
+            <img src="{% static 'logo/logo_copy.jpg' %}" alt="Logo" class="d-inline-block align-top img-fluid" style="max-width: 100px; height: auto;">
+            <div class="ml-3">
+                <span class="company-name">Bleaukraft Limited</span><br>
+                <span class="slogan">Creative Branding Solutions</span>
+            </div>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link btn btn-outline-primary rounded-pill px-4 py-2" href="{% url 'branding:landingpage' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-primary rounded-pill px-4 py-2" href="{% url 'branding:about' %}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-primary rounded-pill px-4 py-2" href="{% url 'branding:services' %}">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-primary rounded-pill px-4 py-2" href="{% url 'branding:contact' %}">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </div>
+
+            <div class="row">
+                <div class="contact-info">
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Address</h4>
+                            <p>4671 Sugar Camp Road, Owatonna, Minnesota, 55060</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Phone</h4>
+                            <p>571-457-2321</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Email</h4>
+                            <p>ntamerrwael@mfano.ga</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form action="" id="contact-form">
+                        <h2>Send Message</h2>
+                        <div class="input-box">
+                            <input type="text" required="true" name="">
+                            <span>Full Name</span>
+                        </div>
+                        <div class="input-box">
+                            <input type="email" required="true" name="">
+                            <span>Email</span>
+                        </div>
+                        <div class="input-box">
+                            <textarea required="true" name=""></textarea>
+                            <span>Type your Message...</span>
+                        </div>
+                        <div class="input-box">
+                            <input type="submit" value="Send" name="">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky Contact Button -->
+    <a href="mailto:ntamerrwael@mfano.ga" class="btn btn-primary btn-lg" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">Contact Us</a>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
