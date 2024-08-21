@@ -14,3 +14,6 @@ def services(request):
 
 def contact(request):
     return render(request, 'branding/contact.html')
+
+def terms_of_service(request):
+    return render(request, 'branding/terms.html')
