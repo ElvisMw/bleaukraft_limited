@@ -338,6 +338,7 @@
                 </div>
                 <form class="contact-form" method="post" action="{% url 'branding:contact' %}">
                     {% csrf_token %}
+                    {{ form.as_p }}
                     <h2>Contact Form</h2>
                     <div class="input-box">
                         <input type="text" id="name" name="name" required>

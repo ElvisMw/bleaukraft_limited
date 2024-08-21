@@ -1766,6 +1766,7 @@ body {
                 <div class="form-container bg-light p-4 rounded shadow-sm" style="max-width: 500px;">
                     <form method="post" action="{% url 'branding:contact' %}">
                         {% csrf_token %}
+                        {{ form.as_p }}
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
                             <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
