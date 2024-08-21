@@ -26,7 +26,7 @@
             display: flex;
             flex-direction: column;
             padding-top: 60px;
-            background-image: url(https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) !important;
+            background-image: url({% static 'images/vehicle_branding4.JPG' %}) !important;
             background-size: cover;
             background-position: center;
             position: relative;
@@ -338,7 +338,7 @@
                 </div>
                 <form class="contact-form" method="post" action="{% url 'branding:contact' %}">
                     {% csrf_token %}
-                    {{ form.as_p }}
+
                     <h2>Contact Form</h2>
                     <div class="input-box">
                         <input type="text" id="name" name="name" required>
@@ -357,7 +357,6 @@
                         <span>Your Message</span>
                     </div>
                     <input type="submit" value="Send Message" style="background-color: #007bff; color: #fff; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">
-
                 </form>
             </div>
         </div>

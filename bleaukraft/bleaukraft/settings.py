@@ -121,6 +121,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
 # settings for email
 """
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -131,5 +132,6 @@ EMAIL_HOST_USER = 'your-email@example.com'
 EMAIL_HOST_PASSWORD = 'your-email-password'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 """
+
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
