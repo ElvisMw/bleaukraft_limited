@@ -1,3 +1,4 @@
+<!-- bleaukraft limited/branding/templates/branding/contact.html -->
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <style>
-
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
         * {
@@ -97,7 +97,6 @@
         .navbar .btn-outline-primary.rounded-pill {
             border-radius: 50rem;
         }
-
 
         section {
             position: relative;
@@ -233,7 +232,7 @@
 
         .contact-form .input-box input[type="submit"] {
             width: 100%;
-            background: #00bcd4;
+            background: #007bff;
             color: #FFF;
             border: none;
             cursor: pointer;
@@ -244,9 +243,8 @@
         }
 
         .contact-form .input-box input[type="submit"]:hover {
-            background: #FFF;
-            color: #00bcd4;
-            border: 2px solid #00bcd4;
+            background: #0056b3;
+            color: #fff;
         }
 
         @media (max-width: 991px) {
@@ -292,36 +290,40 @@
                     <a class="nav-link btn btn-outline-primary rounded-pill px-4 py-2" href="{% url 'branding:about' %}">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-outline-primary rounded-pill px-4 py-2" href="{% url 'branding:services' %}">Services</a>
+                    <a class="nav-link btn btn-outline-primary rounded-pill px-4 py-2" href="{% url 'branding:services' %}">Our Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-primary rounded-pill px-4 py-2" href="{% url 'branding:contact' %}">Contact</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <section>
+    <!--- Contact Section -->
+    <section id="contact">
         <div class="container">
-            <div class="section-header">
-                <h2>Contact Us</h2>
-                <p>Feel free to get in touch with us. We are always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+            <div class="section-header text-center">
+                <h2>Get In Touch</h2>
+                <p>We’d love to hear from you. Fill out the form below to send us a message.</p>
             </div>
             <div class="row">
                 <div class="contact-info">
                     <div class="contact-info-item">
                         <div class="contact-info-icon">
-                            <i class="fas fa-phone-alt"></i>
+                            <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-info-content">
-                            <h4>Call Us On</h4>
-                            <p>+254 724 239 883 / +254 728 646 757</p>
+                            <h4>Our Address</h4>
+                            <p>P.O. Box 48478-00100, City Square,Nairobi</p>
                         </div>
                     </div>
                     <div class="contact-info-item">
                         <div class="contact-info-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <i class="fas fa-phone"></i>
                         </div>
                         <div class="contact-info-content">
-                            <h4>Office</h4>
-                            <p>Bleaukraft Limited, <br/>P.O. Box 48478-00100 <br/>City Square,Nairobi.</p>
+                            <h4>Call Us</h4>
+                            <p>+254 724 239 883 / +254 728 646 757</p>
                         </div>
                     </div>
                     <div class="contact-info-item">
@@ -329,37 +331,40 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="contact-info-content">
-                            <h4>Email</h4>
+                            <h4>Email Us</h4>
                             <p>sales@bleaukraftlimited.com</p>
                         </div>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <h2>Send Message</h2>
-                    <form action="#">
-                        <div class="input-box">
-                            <input type="text" name="name" required="required">
-                            <span>Full Name</span>
-                        </div>
-                        <div class="input-box">
-                            <input type="email" name="email" required="required">
-                            <span>Email</span>
-                        </div>
-                        <div class="input-box">
-                            <textarea name="message" required="required"></textarea>
-                            <span>Type your Message...</span>
-                        </div>
-                        <div class="input-box">
-                            <input type="submit" value="Send">
-                        </div>
-                    </form>
-                </div>
+                <form class="contact-form" method="post" action="{% url 'branding:contact' %}">
+                    {% csrf_token %}
+                    <h2>Contact Form</h2>
+                    <div class="input-box">
+                        <input type="text" id="name" name="name" required>
+                        <span>Your Name</span>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" id="email" name="email" required>
+                        <span>Your Email</span>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" id="subject" name="subject" required>
+                        <span>Subject</span>
+                    </div>
+                    <div class="input-box">
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                        <span>Your Message</span>
+                    </div>
+                    <input type="submit" value="Send Message" style="background-color: #007bff; color: #fff; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">
+
+                </form>
             </div>
         </div>
     </section>
 
+    <!--- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
