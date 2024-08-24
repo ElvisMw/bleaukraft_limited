@@ -31,10 +31,6 @@ def contact(request):
 def contact_success(request):
     return render(request, 'branding/contact_success.html')
 
-
-def home(request):
-    return render(request, 'branding/home.html')
-
 def landingpage(request):
     return render(request, 'branding/landingpage.html')
 
