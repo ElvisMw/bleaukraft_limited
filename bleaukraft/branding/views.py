@@ -46,7 +46,10 @@ def contact_success(request):
     """
     return render(request, 'branding/contact_success.html')
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 190365391a98fcc753a9293c89f27aff51ac94aa
 def landingpage(request):
     """
     Renders the landing page.
