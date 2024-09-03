@@ -1,0 +1,1143 @@
+
+        /* Fixed Contact Info Styles */
+        .contact-info.contact-info-bar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #343a40;
+            color: #fff;
+            z-index: 1040;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        /* Layout for Contact Details and Social Links */
+        .contact-info.contact-info-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .contact-info.contact-info-bar .contact-details,
+        .contact-info.contact-info-bar .social-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Button Styles */
+        .contact-info.contact-info-bar .contact-details span,
+        .contact-info.contact-info-bar .social-links a {
+            display: flex;
+            align-items: center;
+            color: #000;
+            font-size: 1rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            padding: 8px 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            margin: 0 10px;
+            transition: background-color 0.3s, color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info.contact-info-bar .contact-details span:hover,
+        .contact-info.contact-info-bar .social-links a:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        /* Adjust spacing for mobile screens */
+        @media (max-width: 768px) {
+            .contact-info.contact-info-bar {
+                display: none;
+            }
+
+            .navbar {
+                top: 0; /* Adjust top position if necessary */
+            }
+        }
+
+        /* Fixed Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 60px;
+            width: 100%;
+            z-index: 1030;
+            background-color: #f8f9fa;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                top: 0; /* Adjust top position if necessary */
+            }
+        }
+
+        /* Hero Section Styles */
+        .hero-section {
+            margin-top: 120px;
+        }
+
+        .hero-collage {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .hero-image {
+            position: relative;
+            width: 100%;
+            padding-top: 100%;
+            overflow: hidden;
+            border-radius: 15px; /* Curved edges */
+        }
+
+        .hero-image img,
+        .hero-image span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .hero-image span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+
+        .hero-image.bg-primary span {
+            background-color: #007bff !important;
+        }
+
+        .hero-image.folded img {
+            transform: translateY(100%);
+        }
+
+        .hero-image.folded span {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .hero-section h1,
+        .hero-section h3,
+        .hero-section h4 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero-section h3 {
+            font-size: 1.5rem;
+        }
+
+        .hero-section h4 {
+            font-size: 1.2rem;
+        }
+
+        .about-section,
+        .services-section {
+            padding: 50px 0;
+        }
+
+        .about-section h2,
+        .services-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .service-box {
+            padding: 30px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .service-box:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Sticky Contact Button Styles */
+        .sticky-contact-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s, transform 0.3s;
+            z-index: 1000;
+        }
+
+        .sticky-contact-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        .sticky-contact-button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .sticky-contact-button img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .email-button {
+            bottom: 80px;
+            background-color: #007bff;
+        }
+
+        .whatsapp-button {
+            bottom: 140px;
+            background-color: #25D366;
+        }
+
+        .email-button:hover {
+            background-color: #0056b3;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+        }
+        .company-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .slogan {
+            font-size: 1rem;
+            color: #6c757d; /* Adjust color to fit your design */
+        }
+
+        /* About Us */
+            .about-us {
+                background-color: #f8f9fa;
+            }
+
+            .about-us-image {
+                position: relative;
+            }
+
+            .about-us-image img {
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .about-us-image:hover img {
+                transform: scale(1.05);
+            }
+
+            .about-us-content {
+                background-color: #ffffff;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 2rem;
+            }
+
+            .about-us-content h2 {
+                font-size: 2.5rem;
+                font-weight: bold;
+            }
+
+            .about-us-content p {
+                font-size: 1.125rem;
+                color: #495057;
+                line-height: 1.6;
+            }
+
+            .btn-primary {
+                background-color: #007bff;
+                border-color: #007bff;
+            }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+                border-color: #004085;
+            }
+
+            /* Custom styles for better alignment */
+            .about-us-description {
+                margin-bottom: 1.5rem;
+            }
+
+        /* Experience section */
+            .experience {
+                background-color: #007bff; /* Primary color */
+                border-radius: 15px; /* Curved edges for the section */
+                padding: 2rem; /* Padding for spacing inside the section */
+                overflow: hidden; /* Ensures that rounded corners apply to child elements */
+            }
+
+            .experience h2 {
+                color: #ffffff; /* Title color */
+            }
+
+            .experience-item {
+                background-color: #0056b3; /* Darker shade of primary color */
+                border-radius: 8px;
+                border: 1px solid #ffffff; /* Thin white border */
+                padding: 2rem;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                margin-bottom: 1rem;
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .experience-item:hover {
+                transform: translateY(-5px);
+            }
+
+            .experience-item i {
+                color: #ffffff; /* Icon color */
+            }
+
+            .experience-item h3 {
+                font-size: 3rem;
+                color: #ffffff; /* Text color */
+            }
+
+            .experience-item p {
+                font-size: 1.25rem;
+                color: #ffffff; /* Text color */
+            }
+
+            .experience-item p.lead {
+                font-weight: bold;
+            }
+
+            /* Ensure that items are evenly spaced */
+            .row > [class*='col-'] {
+                display: flex;
+                justify-content: center;
+            }
+
+            #branding-services {
+                padding: 0;
+            }
+            .carousel-item {
+                height: 100vh; /* Fullscreen height */
+                background-size: cover;
+                background-position: center;
+                color: white;
+            }
+            .carousel-caption {
+                background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+                padding: 20px;
+                border-radius: 10px;
+            }
+            .carousel-caption h2 {
+                font-size: 2.5rem;
+            }
+            .carousel-caption ul {
+                list-style-type: none;
+                padding-left: 0;
+                font-size: 1.2rem;
+            }
+            .carousel-caption ul li {
+                margin-bottom: 10px;
+            }
+
+            /* Custom Styles for Curved Edges Carousel */
+#branding-services {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-item {
+    border-radius: 15px; /* Adjust the radius as needed */
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.carousel-item img {
+    border-radius: 15px; /* Adjust the radius as needed */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+.carousel-caption {
+    border-radius: 15px; /* Optional: if you want rounded corners for caption area */
+    background: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background for better readability */
+    padding: 20px; /* Optional: adjust padding as needed */
+}
+/* Carousel Control Styles */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 40px; /* Button width */
+    height: 40px; /* Button height */
+    border-radius: 50%; /* Rounded buttons */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Light border */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 80%, 80%; /* Adjust icon size */
+    width: 40px; /* Smaller width */
+    height: 40px; /* Smaller height */
+    background-color: white; /* White icon color */
+    border-radius: 50%; /* Rounded icons */
+}
+
+/* Hover effect */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Focus effect */
+.carousel-control-prev:focus,
+.carousel-control-next:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Custom focus outline */
+}
+/* Carousel Control Styles */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 40px; /* Button width */
+    height: 40px; /* Button height */
+    border-radius: 50%; /* Rounded buttons */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Light border */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for exact centering */
+}
+
+/* Center carousel control icons horizontally */
+.carousel-control-prev {
+    left: 10px; /* Distance from the left edge */
+}
+
+.carousel-control-next {
+    right: 10px; /* Distance from the right edge */
+}
+
+/* Carousel Control Icon Styles */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 80%; /* Adjust icon size */
+    width: 24px; /* Icon width */
+    height: 24px; /* Icon height */
+    background-color: white; /* White icon color */
+    border-radius: 50%; /* Rounded icons */
+}
+
+/* Hover effect */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Focus effect */
+.carousel-control-prev:focus,
+.carousel-control-next:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Custom focus outline */
+}
+.image-container {
+    position: relative; /* Position container relative to place children absolutely */
+    width: 100%; /* Full width of carousel item */
+    height: 100%; /* Full height of carousel item */
+}
+
+.blurred-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Ensure the blurred image covers the container */
+    background-position: center; /* Center the image */
+    filter: blur(10px); /* Adjust blur amount as needed */
+    z-index: 1; /* Place it below the sharp image */
+}
+
+.sharp-image {
+    position: relative;
+    width: 100%; /* Full width of carousel item */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 2; /* Place it above the blurred image */
+}
+
+.carousel-caption {
+    border-radius: 15px; /* Optional: if you want rounded corners for caption area */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
+    padding: 20px; /* Optional: adjust padding as needed */
+}
+/* Ensure the carousel and images cover the full screen */
+.carousel-item {
+    height: 100vh; /* Fullscreen height */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    position: relative; /* Ensure relative positioning for child elements */
+}
+
+/* Style the image container */
+.image-container {
+    position: relative; /* Ensure positioning for absolute children */
+    width: 100%;
+    height: 100%;
+}
+
+/* Apply blur effect */
+.blurred-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(10px); /* Adjust the blur radius as needed */
+    z-index: 1; /* Place it below the sharp image */
+}
+
+/* Ensure the sharp image is on top of the blurred image */
+.sharp-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the area */
+    z-index: 2; /* Place it above the blurred image */
+}
+
+/* Carousel Caption */
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 15px;
+    z-index: 3; /* Ensure captions are on top of everything */
+}
+
+/* Style the carousel controls */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Adjust position of carousel controls */
+.carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-control-next {
+    right: 10px;
+}
+
+/* Style the carousel control icons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 80%;
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+/* Hover and focus effects for controls */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-control-prev:focus,
+.carousel-control-next:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}
+/*services at a glance */
+
+.service-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 30px 15px;
+    border-radius: 10px;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-bg:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.icon-hover:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.heading-hover:hover {
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.service-box:hover .icon-hover {
+    transform: scale(1.2);
+}
+
+.service-box:hover .heading-hover {
+    color: #007bff;
+}
+
+.text-muted {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+/* Overlay for better readability */
+.service-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.service-box {
+    position: relative;
+    z-index: 2;
+}
+
+/* Ensure text color contrasts well */
+.service-heading {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds shadow for readability */
+}
+
+.text-muted {
+    color: rgba(255, 255, 255, 0.85) !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Adds shadow for readability */
+}
+
+/* Rest of the existing styles */
+.service-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 30px 15px;
+    border-radius: 10px;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-bg:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.icon-hover:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.heading-hover:hover {
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.service-box:hover .icon-hover {
+    transform: scale(1.2);
+}
+
+.service-box:hover .heading-hover {
+    color: #007bff;
+}
+
+/* Policy Timeline Section */
+#policy-timeline {
+  background-color: #007bff; /* Primary color background for the section */
+  color: black; /* Set text color to black */
+  padding: 3rem 0; /* Adjust padding as needed */
+  position: relative; /* Ensure positioning context for absolute elements */
+}
+
+#policy-timeline .container {
+  max-width: 1200px; /* Adjust if needed */
+  position: relative; /* Ensure positioning context for the timeline */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the section takes full viewport height */
+}
+
+#policy-timeline .timeline {
+  position: relative;
+  padding: 2rem 0;
+  flex: 1; /* Allow timeline to grow and fill available space */
+}
+
+/* Ensure .timeline takes full height of its content */
+#policy-timeline .timeline::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background-color: white; /* Color of the vertical line */
+  left: 2rem; /* Move line to the right (adjust as needed) */
+  top: 0; /* Start from the top of the container */
+  bottom: 0; /* Extend to the bottom of the container */
+  z-index: 0; /* Ensure line is behind items */
+}
+
+#policy-timeline .timeline-item {
+  position: relative;
+  color: black; /* Ensure text color inside timeline items is black */
+  padding: 1rem 1rem 1rem 7rem; /* Adjust padding to account for the moved line */
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  margin-bottom: 2rem; /* Space between items */
+  z-index: 1; /* Ensure the timeline item is above the line */
+}
+
+#policy-timeline .timeline-year {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: black; /* Color for the icon and text inside the circle */
+  border-radius: 50%;
+  background-color: white; /* Background for timeline year circle */
+  border: 1px solid white; /* Border color for the circle */
+  box-shadow: inset 0 0 0 1px black; /* Adjusted shadow for visibility */
+  left: 0.5rem; /* Align icon with the moved line */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#policy-timeline .timeline-content {
+  background-color: #007bff; /* Primary blue background for content */
+  color: black; /* Ensure text color is black for contrast */
+  margin-left: 5rem; /* Adjust margin-left to position content correctly */
+  padding: 1rem;
+  border-radius: 0.25rem; /* Optional: add border radius for rounded corners */
+}
+
+#policy-timeline .timeline-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: black; /* Ensure title color is black */
+}
+
+#policy-timeline .text-muted {
+  color: rgba(0, 0, 0, 0.8); /* Muted text in black with reduced opacity */
+}
+
+#policy-timeline .timeline-item:hover {
+  background-color: rgba(230, 230, 230, 0.48); /* Light hover effect */
+  border-radius: 0.25rem;
+}
+
+/* Button Styling */
+#policy-timeline .btn-learn-more {
+  display: block; /* Make the button a block element */
+  margin: 2rem auto; /* Center the button and add margin at top and bottom */
+  padding: 0.75rem 1.5rem; /* Adjust padding */
+  font-size: 1rem; /* Font size for the button */
+  border-radius: 0.25rem; /* Rounded corners */
+  color: #fff; /* White text */
+  background-color: #007bff; /* Primary blue background */
+  border: 1px solid #007bff; /* Border color matching the background */
+  text-align: center; /* Center the text inside the button */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+}
+
+#policy-timeline .btn-learn-more:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  border-color: #0056b3; /* Matching border color on hover */
+  text-decoration: none; /* Remove underline on hover */
+}
+
+@media (max-width: 768px) {
+  #policy-timeline .timeline-item {
+    padding-left: 2rem; /* Adjust for smaller screens */
+  }
+
+  #policy-timeline .timeline-year {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+    left: 0.7rem; /* Adjust for smaller screens */
+  }
+
+  #policy-timeline .timeline-content {
+    margin-left: 4rem;
+  }
+
+  /* Button Styling for smaller screens */
+  #policy-timeline .btn-learn-more {
+    padding: 0.5rem 1rem; /* Adjust padding for smaller screens */
+    font-size: 0.9rem; /* Smaller font size */
+  }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+#policy-timeline .timeline-year {
+  animation: bounce 7s infinite;
+}
+
+/* testimonials */
+/* Container background */
+#testimonials {
+    background-color: #f9f9f9;
+}
+
+/* Testimonial card styles */
+.testimonial {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    border: 1px solid #ddd; /* Thin border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial p.lead {
+    font-style: italic;
+    color: #333;
+}
+
+.testimonial h5 {
+    color: #007bff;
+    margin-top: 15px;
+    font-weight: 700;
+}
+
+.testimonial .text-muted {
+    font-size: 0.9em;
+    color: #6c757d !important;
+}
+
+/* Section heading styles */
+.section-heading {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #28a745; /* Green color */
+    text-transform: uppercase;
+    background-color: #e0f7df; /* Light green background */
+    padding: 5px 15px;
+    border-radius: 50px; /* Capsule shape */
+    display: block; /* Ensure title is on its own line */
+    margin: 0 auto 15px auto; /* Center and add bottom margin */
+}
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Section styles */
+#contact {
+    background-color: #f9f9f9;
+    padding: 60px 0; /* Add padding to top and bottom */
+}
+
+/* Gradient Background */
+.bg-gradient {
+    background: linear-gradient(135deg, #f5f5f5, #e0f7fa);
+}
+
+/* Contact Information and Form */
+.bg-white {
+    background-color: #ffffff;
+}
+
+.rounded {
+    border-radius: 15px;
+}
+
+.shadow-lg {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.border {
+    border: 1px solid #ddd;
+}
+
+/* Form Styles */
+.form-control-lg {
+    font-size: 1.125rem;
+    width: 100%; /* Make form fields take full width */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.col-md-6, .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.bg-white .container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.bg-white {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Form container to ensure full width */
+.contact-form-container {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+/* Working Hours */
+.list-unstyled {
+    list-style: none;
+    padding-left: 0;
+}
+
+.list-unstyled li {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .section-heading {
+        font-size: 20px;
+        padding: 8px 16px;
+        margin-bottom: 20px;
+    }
+
+    .row > [class*='col-'] {
+        margin-bottom: 20px;
+    }
+
+    .form-control-lg {
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-heading {
+        font-size: 18px;
+        padding: 6px 12px;
+    }
+
+    .form-control-lg {
+        font-size: 0.875rem;
+    }
+
+    .btn-primary {
+        font-size: 0.875rem;
+        padding: 8px 16px;
+    }
+
+    .list-unstyled li {
+        font-size: 0.875rem;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+    /* Canvas Background and Styling */
+    .contact-section {
+        overflow: hidden;
+        padding: 5rem 0;
+        position: relative;
+        z-index: 1;
+        background-color: #001f3f; /* Dark blue background to enhance the effect */
+    }
+
+    #particleCanvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .form-container {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        position: relative;
+        z-index: 2;
+    }
+
+    .text-white {
+        color: white;
+        position: relative;
+        z-index: 2;
+    }
+    /* Contact Section Styling with Black Background */
+    .contact-section {
+        overflow: hidden;
+        padding: 5rem 0;
+        position: relative;
+        z-index: 1;
+        background-color: #000; /* Set the background color to black */
+    }
+
+    #particleCanvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .form-container {
+        background-color: rgba(255, 255, 255, 0.9); /* Keep the form background light */
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        position: relative;
+        z-index: 2;
+    }
+
+    .text-white {
+        color: white;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Footer Styling */
+    .footer {
+        background-color: #1a1a1a; /* Darker background for a sleek look */
+        color: #fff;
+    }
+
+    .footer a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .footer a:hover {
+        color: #ddd;
+        text-decoration: underline;
+    }
+
+    .footer-logo img {
+        max-width: 150px; /* Adjust logo size */
+        height: auto;
+    }
+
+    .btn-outline-light {
+        border: 1px solid #fff;
+        color: #fff;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .btn-outline-light:hover {
+        background-color: #fff;
+        color: #1a1a1a;
+    }
+
+    .btn-icon {
+        font-size: 1.5rem; /* Adjust icon size */
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%; /* Circle buttons */
+        padding: 0;
+    }
+
+    .btn-icon:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* Light hover effect */
+    }
+
+    .contact-info p {
+        margin: 0;
+        font-size: 0.9rem; /* Slightly smaller text for contact info */
+    }
