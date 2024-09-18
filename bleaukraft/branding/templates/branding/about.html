@@ -238,6 +238,111 @@ p {
     }
 }
 
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Container */
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.image-circle-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+/* Circle base styles */
+.circle {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.circle:hover {
+    transform: scale(1.1); /* Circle enlarges slightly on hover */
+}
+
+.circle-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Big circle */
+.big-circle {
+    width: 150px;
+    height: 150px;
+    border: 5px solid var(--black);
+}
+
+/* Bigger circle */
+.bigger-circle {
+    width: 200px;
+    height: 200px;
+    border: 5px solid var(--black);
+}
+
+/* Biggest circle */
+.biggest-circle {
+    width: 250px;
+    height: 250px;
+    border: 5px solid var(--black);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .big-circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .bigger-circle {
+        width: 150px;
+        height: 150px;
+    }
+
+    .biggest-circle {
+        width: 180px;
+        height: 180px;
+    }
+
+    /* Stack circles vertically on smaller screens */
+    .image-circle-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .big-circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .bigger-circle {
+        width: 130px;
+        height: 130px;
+    }
+
+    .biggest-circle {
+        width: 150px;
+        height: 150px;
+    }
+}
+
 </style>
 
 <!-- Video Background Section -->
@@ -249,12 +354,12 @@ p {
     <div class="video-overlay">
         <h1>Welcome to Bleaukraft Limited</h1>
         <p>Innovative Branding & Creative Solutions</p>
-        <a href="{% url 'branding:services' %}" class="btn btn-primary btn-lg">Discover More</a>
+        <a href="{% url 'branding:services' %}" class="btn btn-warning btn-lg">Discover More</a>
     </div>
 </div>
 
 <!-- Our Mission Section -->
-<section class="about-section bg-light py-5">
+<section class="about-section bg-light py-5" style="border-radius: 10px; padding: 20px; background-image: url('{% static 'images/wall_branding13.jpg' %}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="typewriter">
         <div class="row">
             <!-- Text Column with Blue Background and Slide-in Animation -->
@@ -272,18 +377,32 @@ p {
     </div>
 </section>
 
-
-
 <!-- Our Vision Section -->
-<section class="services-section py-5">
+<section class="services-section py-5" style="border-radius: 10px; padding: 20px; background-image: url('{% static 'images/orange_background.jpg' %}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+
     <div class="typewriter">
         <div class="row">
             <!-- Image Column -->
-            <div class="col-lg-6 order-lg-1">
-                <img src="{% static 'images/mugs_branding4.jpg' %}" alt="Our Vision" class="img-fluid rounded">
-            </div>
+            <section class="about-section py-5" style="border-radius: 10px; padding: 20px; position: relative;">
+
+                <div class="image-circle-container">
+                    <div class="circle big-circle">
+                        <img src="{% static 'images/mugs_branding4.jpg' %}" alt="Big Circle Image" class="circle-image">
+                    </div>
+
+                    <div class="circle bigger-circle">
+                        <img src="{% static 'images/market4.jfif' %}" alt="Bigger Circle Image" class="circle-image">
+                    </div>
+
+                    <div class="circle biggest-circle">
+                        <img src="{% static 'images/sign23.jpeg' %}" alt="Biggest Circle Image" class="circle-image">
+                    </div>
+
+
             <!-- Text Column with Blue Background -->
             <div class="col-lg-6 order-lg-2 mb-4">
+
                 <div class="p-4 bg-primary text-white rounded">
                     <h2 class="text-white">Our Vision</h2>
                     <p>We envision a world where every brand has a voice that is heard and a story that is told. Our goal is to become a leading provider of creative branding solutions, known for our innovation, quality, and excellence.</p>
@@ -295,7 +414,7 @@ p {
 
 
 <!-- Our Values Section -->
-<section class="about-section bg-light py-5">
+<section class="about-section bg-light py-5" style="border-radius: 10px; padding: 20px; background-image: url('{% static 'images/orange_background.jpg' %}'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 20px;">>
     <div class="container">
         <div class="row">
             <div class="col-lg-4 mb-4">
